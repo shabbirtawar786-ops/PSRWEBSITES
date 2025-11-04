@@ -1,4 +1,3 @@
-
 /* ==========================
    HERO SLIDER
    ========================== */
@@ -46,7 +45,20 @@ function openLink(url) {
 
 // Initialize slider
 showSlide(0);
-setInterval(nextSlide, 6000);
+let slideInterval = setInterval(nextSlide, 6000);
+
+// Pause slider on mouse hover
+const heroSlider = document.querySelector('.hero-slider');
+
+heroSlider.addEventListener('mouseenter', () => {
+  clearInterval(slideInterval);
+});
+
+heroSlider.addEventListener('mouseleave', () => {
+  slideInterval = setInterval(nextSlide, 6000);
+});
+
+
 
 
 /* ==========================
@@ -218,3 +230,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+

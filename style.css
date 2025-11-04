@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+
 :root {
   --nav-bg: rgba(255, 255, 255, 0.7);
   --nav-border: rgba(200, 200, 200, 0.45);
@@ -563,7 +566,7 @@ body.no-scroll {
   font-family: 'Montserrat', 'Inter', Arial, sans-serif;
   letter-spacing: 1.4px;
   margin-bottom: 20px;
-  text-shadow: 0 2px 8px #b2d7fbaa, 0 0px 2px #caeaff90;
+  
 }
 
 .brand-slider.glow-box {
@@ -576,7 +579,7 @@ body.no-scroll {
   background: rgba(247, 251, 255, 0.95);
   border-radius: 19px;
   border: 1.5px solid #d2ecff;
-  box-shadow: 0 0 20px 6px #b3ebff90, 0 4px 32px #c9f3ff57;
+
   transition: box-shadow 0.3s;
   z-index: 1;
 }
@@ -588,7 +591,7 @@ body.no-scroll {
   inset: 0;
   border-radius: 24px;
   pointer-events: none;
-  box-shadow: 0 0 64px 0 #72d6ff44, 0 0 128px 10px #85e1ff30;
+ 
   z-index: 0;
 }
 
@@ -625,15 +628,7 @@ body.no-scroll {
     box-shadow 0.22s;
   z-index: 2;
 }
-.brand.glow-brand:hover {
-  color: #fff;
-  background: rgba(0,174,255,0.17);
-  text-shadow:
-    0 2px 10px #5ad0ffcc,
-    0 0px 5px #5dbdffb5,
-    0 1px 1px #a5d3ff;
-  box-shadow: 0 0 20px 5px #8de2ff88;
-}
+
 
 /* Soft inner-glow on hover with blur effect */
 .brand.glow-brand::after {
@@ -647,7 +642,7 @@ body.no-scroll {
   border-radius: 22px;
   z-index: -2;
   opacity: 0;
-  background: radial-gradient(circle, #60e4ff6e 0%, #b5f2ff21 90%);
+  /* background: radial-gradient(circle, #60e4ff6e 0%, #b5f2ff21 90%); */
   transition: opacity 0.18s;
   filter: blur(6px);
 }
@@ -977,18 +972,7 @@ body.dark-mode .about-image img {
   overflow: hidden;
 }
 
-/* Strong glowing top edge */
-.footer-top-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: linear-gradient(90deg, #21aac5, #43e8c2, #21aac5);
-  background-size: 200% 100%;
-  animation: glowFlow 3.5s linear infinite;
-  box-shadow: 0 0 18px #21aac5;
-}
+
 @keyframes glowFlow {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
@@ -1026,7 +1010,7 @@ body.dark-mode .about-image img {
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.5px;
-  align-self: flex-end; /* Aligns the brand name under the logo */
+  /* align-self: flex-end; Aligns the brand name under the logo */
 }
 
 /* Address & Map */
@@ -1351,4 +1335,727 @@ body.dark-mode .about-image img {
 
 
 
+/* ===============================
+   THEME A — CORPORATE MAROON
+   Full glow replace for #5a0f22
+   Paste at the END of style.css
+=================================*/
+:root {
+  --primary: #5a0f22;
+  --primary-dark: #400a18;
+  --primary-light: #e8d6db;
+  --nav-link-hover: var(--primary);
+  --brand-name: var(--primary);
+}
 
+/* -------- Navbar & Links -------- */
+.company-name { color: var(--brand-name); }
+
+.nav-links li a:hover,
+.dropdown > a:hover {
+  background: rgba(90, 15, 34, 0.10);
+  color: var(--primary);
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(90, 15, 34, 0.12);
+  color: var(--primary);
+}
+
+/* Desktop dropdown glass already set in your CSS; just ensure tint is neutral */
+.dropdown-menu,
+.dropdown-submenu {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+}
+
+/* Invisible hover bridges remain unchanged */
+
+/* -------- Mobile menu hover tint -------- */
+@media (max-width: 700px) {
+  .nav-links .dropdown-menu a:hover {
+    background: rgba(90, 15, 34, 0.10);
+    color: var(--primary);
+  }
+}
+
+/* -------- Hero Slider -------- */
+.hero-slide {
+  /* swap blue glows to maroon glows */
+  box-shadow:
+    0 0 14px 3px rgba(90, 15, 34, 0.40),
+    0 0 34px 8px rgba(90, 15, 34, 0.22),
+    inset 0 0 8px 1px rgba(90, 15, 34, 0.42);
+}
+
+.hero-slide::before {
+  /* replace cyan/blue gradient glow with maroon hue */
+  background: linear-gradient(60deg,
+    rgba(90, 15, 34, 0.38),
+    rgba(90, 15, 34, 0.50),
+    rgba(90, 15, 34, 0.38));
+  opacity: 0.35;
+}
+
+.read-more {
+  background: var(--primary);
+  color: #fff;
+}
+.read-more:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 0 12px rgba(90, 15, 34, 0.45);
+}
+
+/* Arrows & Dots */
+.arrow { color: rgba(90, 15, 34, 0.75); }
+.arrow:hover {
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(90, 15, 34, 0.55);
+}
+
+.dots button { background: var(--primary-light); }
+.dots button.active {
+  background: var(--primary);
+  transform: scale(1.3);
+}
+
+/* -------- Trusted By strip -------- */
+.brand-slider.glow-box {
+  background: rgba(248, 240, 243, 0.95);
+  border: 1.5px solid var(--primary-light);
+  box-shadow: 0 0 20px 6px rgba(90, 15, 34, 0.22), 0 4px 32px rgba(90, 15, 34, 0.18);
+}
+.brand.glow-brand:hover {
+  color: #fff;
+  background: rgba(90, 15, 34, 0.17);
+  text-shadow: 0 2px 10px rgba(90, 15, 34, 0.75), 0 0 5px rgba(90, 15, 34, 0.65);
+  box-shadow: 0 0 20px 5px rgba(90, 15, 34, 0.45);
+}
+
+/* -------- About Section -------- */
+.about-us-section {
+  background: linear-gradient(125deg, #f8e9ee 60%, #fff 100%);
+  box-shadow: 0 6px 32px rgba(90, 15, 34, 0.10), 0 1.5px 14px rgba(90, 15, 34, 0.05);
+}
+.about-content h2 { color: var(--primary); }
+.about-content li { color: #4a1c2b; }
+
+/* Dark mode mapping for about section to maroon family */
+body.dark-mode .about-us-section {
+  background: linear-gradient(120deg, #26141b 65%, #2c1b23 100%);
+  box-shadow: 0 4px 26px rgba(90, 15, 34, 0.12), 0 1.5px 14px rgba(90, 15, 34, 0.10);
+}
+body.dark-mode .about-content p,
+body.dark-mode .about-content li { color: #f5e9ed; }
+body.dark-mode .about-content h2 { color: #d1a9b2; }
+body.dark-mode .about-image img {
+  background: #2c1b23;
+  box-shadow: 0 5px 24px rgba(90, 15, 34, 0.25);
+}
+
+/* -------- Contact / Email block -------- */
+.contact-container {
+  /* replace teal shadow to maroon */
+  box-shadow: 0 8px 32px rgba(90, 15, 34, 0.18);
+}
+.contact-container:hover {
+  box-shadow: 0 12px 38px rgba(90, 15, 34, 0.26);
+}
+.contact-container h2 { color: var(--primary); }
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(90, 15, 34, 0.16);
+}
+.send-btn {
+  /* replace gradient teal→green with maroon flat or subtle gradient */
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(90, 15, 34, 0.20);
+}
+.send-btn:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  box-shadow: 0 6px 24px rgba(90, 15, 34, 0.30);
+}
+#status { color: var(--primary); }
+
+/* -------- Social bar note --------
+   Platform brand colors (LinkedIn, Instagram, etc.) remain as per their brand.
+   We do not recolor them to avoid misbranding. Hover white state remains. */
+
+/* -------- Cookie Modal minor tint sync -------- */
+.cookie-actions .save {
+  background: #f2e8ec;
+  color: #3a2b31;
+}
+.cookie-actions .save:hover { background: #e6d8de; }
+.cookie-actions .accept {
+  background: var(--primary);
+  color: #fff;
+}
+.cookie-actions .accept:hover { background: var(--primary-dark); }
+
+/* -------- Footer -------- */
+.main-footer {
+  background: linear-gradient(180deg, #3a0b18 0%, #5a0f22 100%);
+  color: #e9ecef;
+}
+.footer-top-glow {
+  background: linear-gradient(90deg, #5a0f22, #400a18, #5a0f22);
+  box-shadow: 0 0 18px #5a0f22;
+}
+.footer-services a:hover { color: #e8d6db; }
+
+.contact-info strong { color: var(--primary); }
+.contact-info a:hover { color: #cf8fa1; } /* subtle maroon-tint */
+
+.map-link {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.map-link:hover {
+  color: #cf8fa1;
+  transform: translateY(-2px);
+}
+
+/* Divider */
+.footer-divider {
+  background: linear-gradient(90deg, var(--primary) 0%, #ffffff33 50%, var(--primary) 100%);
+}
+
+/* Social icons hover tint aligned to maroon family */
+.footer-social .icon:hover {
+  background: #fff;
+  color: var(--primary-dark);
+  transform: translateY(-4px);
+}
+
+/* -------- Extra dropdown styling block you had with blue -------- */
+.nav-links .dropdown-menu a:hover {
+  background: rgba(90, 15, 34, 0.10);
+  color: var(--primary);
+}
+
+/* -------- Helper: nav bar shadow color harmonized -------- */
+.nav-blur {
+  box-shadow: 0 2.5px 32px rgba(90, 15, 34, 0.16);
+}
+
+
+
+/* ===== Global Font System ===== */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Brand / Logo */
+.company-name, .footer-company-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* Navigation + Buttons */
+.nav-links a,
+.read-more,
+button,
+.theme-toggle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+
+
+/* =========================================
+   Perfect Dimmed Maroon Glass Navbar
+   ========================================= */
+.nav-blur {
+  background: rgba(90, 15, 34, 0.12); /* slightly softer tint */
+  backdrop-filter: blur(14px) saturate(115%) brightness(1.05);
+  -webkit-backdrop-filter: blur(14px) saturate(115%) brightness(1.05);
+  border-bottom: 1px solid rgba(90, 15, 34, 0.18);
+  box-shadow: 0 2px 12px rgba(90, 15, 34, 0.14);
+}
+
+/* Keep text readable */
+.nav-links li a,
+.dropdown > a {
+  color: #181818 !important;
+  font-weight: 500;
+}
+
+/* Soft elegant hover highlight */
+.nav-links li a:hover,
+.dropdown > a:hover {
+  background: rgba(90, 15, 34, 0.10);
+  color: #5a0f22 !important;
+}
+
+/* Mobile menu - proportional dim */
+@media (max-width: 700px) {
+  .nav-links {
+    background: rgba(90, 15, 34, 0.18);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(90, 15, 34, 0.20);
+  }
+}
+/* Remove bottom line under navbar */
+.nav-blur {
+  border-bottom: none !important;
+  box-shadow: none !important; /* if you want zero shadow also */
+}
+
+.company-name,
+.footer-company-name,
+.brand-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+/* =======================================================
+   GLOBAL BRAND & HEADING STYLING (Premium PSR Identity)
+   ======================================================= */
+
+/* Brand name everywhere (Navbar + Footer) */
+.company-name,
+.footer-company-name,
+.brand-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  color: var(--primary); /* uses your theme color */
+}
+
+/* Smaller brand text variant (mobile/footer compact) */
+@media (max-width: 700px) {
+  .company-name,
+  .footer-company-name {
+    font-size: 1.5rem;
+  }
+}
+
+/* Headings (bold + elegant italic) */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: .4px;
+  color: #222;
+  position: relative;
+}
+
+/* Subtle underline accent under main headings (Luxury style) */
+h1::after, h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+  margin-top: 8px;
+  opacity: .85;
+}
+
+/* Optional soft gold lighting on hover (Premium feel) */
+h1:hover, h2:hover, h3:hover {
+  color: var(--primary);
+  transition: .25s ease;
+  transform: translateY(-2px);
+}
+
+/* Content headings in sections */
+.section-title, .page-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+}
+
+
+
+
+/* ===========================================================
+   MIXED HEADING ACCENT SYSTEM — PREMIUM PSR BRAND
+   =========================================================== */
+
+/* H1 — Main Page Titles (Bold, Luxury Bar) */
+h1 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: .6px;
+  color: #1b1b1b;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 78px;
+  height: 5px;
+  background: var(--primary);
+  border-radius: 3px;
+  margin-top: 8px;
+  opacity: .92;
+}
+
+/* H2 — Section Titles (Gradient Accent) */
+h2 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: .5px;
+  color: #222;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), #b44b63, #ffb3c9);
+  border-radius: 2px;
+  margin-top: 6px;
+  opacity: .85;
+}
+
+/* H3 — Sub-Headings (Thin Underline + Spacing) */
+h3 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: .4px;
+  color: #333;
+  border-bottom: 2px solid rgba(90, 15, 34, 0.28);
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+/* Highlight span — editorial small highlight */
+.highlight-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary);
+  letter-spacing: 0.4px;
+}
+
+/* Bullet + line editorial style for small labels */
+.sub-label {
+  position: relative;
+  padding-left: 18px;
+  font-weight: 600;
+}
+
+.sub-label::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  font-size: 11px;
+  color: var(--primary);
+}
+
+/* Gold hover glow for premium effect */
+h1:hover, h2:hover, h3:hover {
+  transition: .25s;
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Make brand logo consistent everywhere */
+.company-name,
+.footer-company-name {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+
+/* ---------------------------------------
+   FOOTER BRAND — ALIGN, GLOW, & POLISH
+---------------------------------------- */
+
+/* Align logo + brand perfectly inline */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+/* Stronger logo glow */
+.footer-logo {
+  width: 60px;
+  height: auto;
+  filter: drop-shadow(0 0 14px rgba(255,255,255,0.95));
+  transition: 0.3s ease;
+}
+
+.footer-logo:hover {
+  filter: drop-shadow(0 0 22px rgba(255,255,255,1));
+  transform: scale(1.06);
+}
+
+/* Footer brand name style */
+.footer-company-name {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  color: #fff !important;
+  white-space: nowrap;
+}
+
+/* Make footer text more readable */
+footer h4,
+footer address,
+footer a,
+footer strong {
+  color: #ffffff !important;
+}
+
+/* Address text spacing + visibility */
+.logo-address address {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-bottom: 10px;
+  color: #fff !important;
+}
+
+/* Increase map preview size */
+.map-preview, .map-link img {
+  width: 160px !important;
+  height: 110px !important;
+  border-radius: 10px;
+}
+
+/* Make "View on Map" white & bigger */
+.map-link {
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.map-link:hover {
+  color: #ffdede !important;
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+/* Email links visible */
+.contact-info a {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  color: #ffdcdc !important;
+}
+
+/* Improve section spacing */
+.footer-content {
+  gap: 22px;
+  row-gap: 30px;
+}
+
+.footer-col {
+  margin-bottom: 20px;
+}
+
+/* Make entire footer more breathable */
+.main-footer {
+  padding: 60px 0 25px 0;
+}
+
+
+
+
+
+/* ======================================================
+   PREMIUM FOOTER UPGRADE PACK — PSR CORPORATE MAROON THEME
+====================================================== */
+
+/* Footer container enhancement */
+.main-footer {
+  background: linear-gradient(180deg, #2a0d18 0%, #5a0f22 100%);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  padding: 70px 0 32px 0;
+  position: relative;
+}
+
+/* Elegant divider line at top of footer */
+.main-footer::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffffff40, #5a0f22, #ffffff40);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Footer Brand Layout */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Glow ring behind logo */
+.footer-brand::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
+  border-radius: 50%;
+  filter: blur(14px);
+  animation: footerGlow 4s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+/* Logo with strong glow */
+.footer-logo {
+  width: 62px;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,1));
+  transition: .3s ease;
+}
+
+.footer-logo:hover {
+  filter: drop-shadow(0 0 24px rgba(255,255,255,1));
+  transform: scale(1.08);
+}
+
+/* Footer brand name */
+.footer-company-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: #ffffff !important;
+  white-space: nowrap;
+}
+
+/* Address & text improvements */
+.logo-address address {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+/* Map link */
+.map-link {
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.map-link:hover {
+  color: #ffdede;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
+}
+
+/* Email + phone links */
+.contact-info a {
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.contact-info a:hover {
+  color: #ffdcdc !important;
+  text-shadow: 0 0 8px rgba(255,255,255,0.7);
+}
+
+/* Bigger map preview */
+.map-preview {
+  width: 165px !important;
+  height: 120px !important;
+  border-radius: 12px;
+}
+
+/* Social icons neon hover */
+.footer-social .icon {
+  transition: 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+}
+
+.footer-social .icon:hover {
+  transform: translateY(-4px) scale(1.1);
+  filter: drop-shadow(0 0 14px var(--primary)) brightness(1.5);
+}
+
+/* Footer columns spacing */
+.footer-content {
+  row-gap: 34px;
+  gap: 24px;
+}
+
+/* Gold luxury class (optional toggle) */
+.luxury-mode .footer-company-name {
+  color: #f8e6b9 !important;
+  text-shadow: 0 0 18px rgba(255,215,140,0.5);
+}
+
+.luxury-mode .footer-logo {
+  filter: drop-shadow(0 0 14px rgba(255,215,140,1));
+}
+
+.luxury-mode .map-link,
+.luxury-mode .contact-info a {
+  color: #f8e6b9 !important;
+}
+
+/* Logo glow animation */
+@keyframes footerGlow {
+  0% { opacity: .45; transform: scale(1); }
+  100% { opacity: .9; transform: scale(1.15); }
+}
+
+/* Mobile scaling */
+@media(max-width:700px) {
+  .footer-company-name { font-size: 1.55rem; }
+  .footer-logo { width: 52px; }
+}
+
+
+
+/* Shift Services column slightly right */
+.footer-col.footer-services {
+  margin-left: 100px;
+}
+
+/* On smaller screens, reset so it does not look off */
+@media (max-width: 900px) {
+  .footer-col.footer-services {
+    margin-left: 0;
+  }
+}
