@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Wait for DOM
+// Wait for DOM Hamburger Menu
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
