@@ -1,615 +1,481 @@
-
-  /* Font Imports (same as main site) */
-
-
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
-
-    /* <!-- STYLES: place in your CSS file or inside <style> --> */
-
-    /* Uses your root vars (keeps navbar unchanged) */
-      :root{
-        --nav-bg: rgba(255,255,255,0.7);
-        --nav-border: rgba(200,200,200,0.45);
-        --nav-blur: blur(14px);
-        --nav-link: #000;
-        --nav-link-hover: #21aac5;
-        --brand-name: #21aac5;
-      }
-
-      /* Page base (we assume navbar remains above) */
-      #paysoftPageContent { --page-bg: #fff; font-family:'Segoe UI', Arial, sans-serif; color:#576c8d; }
-
-      /* Blur helper (applied to #paysoftPageContent when modal opens) */
-      #paysoftPageContent.blurred { filter: blur(6px) saturate(.98); pointer-events: none; user-select: none; }
-
-      /* --- Hero / Intro --- */
-      .paysoft-hero {
-        display:flex;
-        gap:40px;
-        align-items:center;
-        justify-content:space-between;
-        padding:64px 6%;
-        background:linear-gradient(135deg,#f9fbfd,#e7faff);
-        flex-wrap:wrap;
-      }
-      .paysoft-hero .left { flex:1 1 420px; max-width:640px; }
-      .paysoft-hero h1 { margin:0 0 8px 0; font-size:3rem; color:#0b2130; }
-      .paysoft-hero .tagline { color:var(--brand-name); font-weight:700; font-size:1.25rem; margin-bottom:14px; }
-      .paysoft-hero p.lead { color:#3d556b; line-height:1.7; font-size:1.05rem; margin:0 0 18px 0; }
-      .paysoft-hero .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
-      .btn { display:inline-block; text-decoration:none; padding:12px 20px; border-radius:28px; font-weight:600; transition:transform .18s ease, box-shadow .18s ease; }
-      .btn-primary { background:var(--brand-name); color:#fff; border:none; cursor:pointer; }
-      .btn-ghost { background:transparent; color:var(--brand-name); border:1px solid rgba(33,170,197,0.12); cursor:pointer; }
-      .btn-primary:hover, .btn-ghost:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(33,170,197,0.12); }
-
-      /* --- Carousel Wrap --- */
-  .carousel-wrap {
-    flex: 1 1 640px;
-    max-width: 740px;
-    min-width: 320px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    overflow: hidden;
-  }
-
-  /* --- Slider --- */
-  .slider {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 20px;
-    background: #111;
-    box-shadow: 0 18px 40px rgba(10,40,60,0.12);
-  }
-
-  /* --- Track --- */
-  .slider-track {
-    display: flex;
-    height: 100%;
-    transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1);
-    will-change: transform;
-  }
-
-  /* --- Individual Slide --- */
-  .slide {
-    flex: 0 0 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #000;
-    cursor: zoom-in;
-  }
-
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-
-      /* Remove zoom hover; subtle lift instead */
-      .slide:hover img { transform: translateY(-2px); }
-
-      /* tooltip overlay */
-      .slide::after {
-        content: attr(data-tooltip);
-        position: absolute;
-        left: 18px;
-        bottom: 18px;
-        background: rgba(33,170,197,0.92);
-        color: #fff;
-        padding: 8px 12px;
-        border-radius: 8px;
-        font-size: 0.98rem;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity .28s ease, transform .28s ease;
-        pointer-events: none;
-      }
-      .slide:hover::after { opacity: 1; transform: translateY(0); }
-
-      /* dots */
-      .dots { display:flex; gap:8px; justify-content:center; align-items:center; margin-top:8px; }
-      .dot { width:12px; height:12px; border-radius:50%; background: rgba(11,32,48,0.15); box-shadow: inset 0 1px 0 rgba(255,255,255,0.06); cursor:pointer; transition: all .18s ease; }
-      .dot.active { background: var(--brand-name); transform: scale(1.15); }
-
-      /* --- Features --- */
-      .features { padding:64px 6%; background:#f7fafd; }
-      .features h2 { color:#0b2130; font-size:2rem; margin:0 0 18px 0; text-align:center; }
-      .feature-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:20px; margin-top:20px; max-width:1100px; margin-left:auto; margin-right:auto; }
-      .feature { background:#fff; border-radius:14px; padding:20px; box-shadow:0 8px 24px rgba(15,35,50,0.05); transition: transform .2s ease, box-shadow .2s ease; }
-      .feature:hover { transform: translateY(-6px); box-shadow:0 14px 30px rgba(15,35,50,0.09); }
-      .feature h3 { color:var(--brand-name); margin:0 0 8px 0; }
-      .feature p { margin:0; color:#455b74; line-height:1.6; }
-
-    /* === CTA Section === */
-  .cta {
-    position: relative;
-    padding: 100px 8%;
-    background: linear-gradient(135deg, #21aac5 0%, #008c9e 100%);
-    color: #fff;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  .cta::before, .cta::after {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.4;
-    z-index: 0;
-  }
-
-  .cta::before {
-    top: -80px;
-    left: -100px;
-    background: #fff;
-  }
-
-  .cta::after {
-    bottom: -100px;
-    right: -100px;
-    /* background: #00c8ff; */
-  }
-
-  .cta-box {
-    position: relative;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.08);
-    padding: 60px 40px;
-    border-radius: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
-    backdrop-filter: blur(8px);
-    animation: fadeUp 1s ease-out both;
-  }
-
-  .cta-box h2 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-  }
-
-  .cta-box p {
-    color: #f3f8fa;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-  }
-
-  .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  /* Primary glowing button */
-  .cta-btn.primary {
-    background: #fff;
-    color: #008c9e;
-    border: 2px solid #fff;
-    padding: 12px 36px;
-    border-radius: 50px;
-    font-size: 1.05rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
-  }
-
-  .cta-btn.primary:hover {
-    background: transparent;
-    color: #fff;
-    box-shadow: 0 0 30px rgba(255,255,255,0.6);
-  }
-
-  /* Secondary outline button */
-  .cta-btn.secondary {
-    background: transparent;
-    color: #fff;
-    border: 2px solid rgba(255,255,255,0.8);
-    padding: 12px 36px;
-    border-radius: 50px;
-    font-size: 1.05rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.4s ease;
-  }
-
-  .cta-btn.secondary:hover {
-    background: rgba(255,255,255,0.15);
-    box-shadow: 0 0 25px rgba(255,255,255,0.4);
-  }
-
-  /* Smooth fade animation */
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Responsiveness */
-  @media (max-width: 768px) {
-    .cta-box {
-      padding: 40px 20px;
-    }
-    .cta-box h2 {
-      font-size: 1.8rem;
-    }
-    .cta-box p {
-      font-size: 1rem;
-    }
-  }
-
-
-      /* --- Lightbox (fullscreen viewer) --- */
-      .lightbox { position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:2000; }
-      .lightbox.open { display:flex; }
-      .lightbox .overlay { position:absolute; inset:0; background: rgba(2,8,15,0.78); backdrop-filter: blur(4px); opacity:0; animation: overlayFade .22s forwards; }
-      @keyframes overlayFade { to { opacity: 1; } }
-
-      .lightbox .panel { position:relative; z-index:2001; max-width:92%; max-height:92%; width:1100px; display:flex; align-items:center; justify-content:center; transform: translateY(8px); animation: panelIn .22s forwards; }
-      @keyframes panelIn { to { transform: translateY(0); } }
-
-      .lightbox img { max-width:100%; max-height:100%; border-radius:12px; object-fit:contain; box-shadow: 0 25px 80px rgba(4,18,34,0.65); }
-
-      .lb-btn { position:absolute; top:50%; transform:translateY(-50%); width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.06); color:#fff; border:1px solid rgba(255,255,255,0.06); cursor:pointer; transition:all .18s; backdrop-filter: blur(6px); }
-      .lb-prev { left:24px; }
-      .lb-next { right:24px; }
-      .lb-btn:hover { transform: translateY(-50%) scale(1.06); background: rgba(255,255,255,0.09); }
-
-      .lb-close { position:absolute; top:18px; right:18px; width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.07); color:#fff; cursor:pointer; z-index:2002; }
-
-      /* === DEMO MODAL (Contact Form) === */
-  .modal {
-    position: fixed;
-    inset: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 2100;
-    transition: all 0.3s ease;
-  }
-
-  .modal.open {
-    display: flex;
-    animation: fadeIn 0.3s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .modal .backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(6px);
-    z-index: 0;
-  }
-
-  .modal-box {
-    position: relative;
-    z-index: 1;
-    width: 90%;
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    color: #fff;
-    border-radius: 18px;
-    padding: 36px 40px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    animation: scaleUp 0.3s ease forwards;
-    transform: scale(0.95);
-    opacity: 0;
-  }
-
-  .modal.open .modal-box {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  @keyframes scaleUp {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  /* Close button */
-  .close-x {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
-  }
-
-  .close-x:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: rotate(90deg);
-  }
-
-  /* Titles & Inputs */
-  .modal-box h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.6rem;
-    font-weight: 600;
-  }
-
-  .modal-box p {
-    margin: 0 0 16px 0;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1rem;
-  }
-
-  .modal label {
-    display: block;
-    font-size: 0.95rem;
-    margin-top: 12px;
-    margin-bottom: 6px;
-    color: #c9e9f3;
-  }
-
-  .modal input[type="email"],
-  .modal textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-  }
-
-  .modal input:focus,
-  .modal textarea:focus {
-    border-color: #21aac5;
-    background: rgba(33, 170, 197, 0.15);
-  }
-
-  /* Buttons */
-  .modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 14px;
-    margin-top: 20px;
-  }
-
-  .modal .btn {
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-  }
-
-  .modal .btn.cancel {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-  }
-
-  .modal .btn.cancel:hover {
-    background: rgba(255, 255, 255, 0.3);
-  }
-
-  .modal .btn.send {
-    background: #21aac5;
-    color: #fff;
-    box-shadow: 0 0 18px rgba(33, 170, 197, 0.5);
-  }
-
-  .modal .btn.send:hover {
-    background: #1a94ab;
-    box-shadow: 0 0 24px rgba(33, 170, 197, 0.7);
-  }
-
-  /* Responsiveness */
-  @media (max-width: 600px) {
-    .modal-box {
-      padding: 24px;
-    }
-  }
-
-      /* small screens */
-      @media (max-width:980px){
-        .paysoft-hero { padding:36px 5%; gap:20px; }
-        .paysoft-hero h1 { font-size:2.4rem; }
-        .carousel-wrap { max-width:100%; }
-        .lightbox .panel { width:95%; }
-        .lb-btn { width:48px; height:48px; }
-      }
-      @media (max-width:560px){
-        .paysoft-hero { padding:28px 4%; }
-        .paysoft-hero h1 { font-size:1.9rem; }
-        .paysoft-hero .left { text-align:center; }
-        .btn { padding:10px 14px; font-size:0.95rem; }
-        .slide::after { left:12px; bottom:12px; font-size:0.9rem; padding:6px 10px; }
-        .modal .box { padding:16px; margin: 0 12px; }
-      }
-
-
-      
-  /* =======================================================
-    GLOBAL BRAND & HEADING STYLING (Premium PSR Identity)
-    ======================================================= */
-
-  /* Brand name everywhere (Navbar + Footer) */
-  .company-name,
-  .footer-company-name,
-  .brand-title {
-    font-family: 'Playfair Display', serif !important;
-    font-weight: 700;
-    font-style: italic;
-    letter-spacing: .8px;
-    text-transform: uppercase;
-    font-size: 1.9rem;
-    color: var(--primary); /* uses your theme color */
-  }
-
-  /* Smaller brand text variant (mobile/footer compact) */
-  @media (max-width: 700px) {
-    .company-name,
-    .footer-company-name {
-      font-size: 1.5rem;
-    }
-  }
-
-  /* Headings (bold + elegant italic) */
-  h1, h2, h3 {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 700;
-    font-style: italic;
-    letter-spacing: .4px;
-    color: #222;
-    position: relative;
-  }
-
-  /* Subtle underline accent under main headings (Luxury style) */
-  h1::after, h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--primary);
-    border-radius: 2px;
-    margin-top: 8px;
-    opacity: .85;
-  }
-
-  /* Optional soft gold lighting on hover (Premium feel) */
-  h1:hover, h2:hover, h3:hover {
-    color: var(--primary);
-    transition: .25s ease;
-    transform: translateY(-2px);
-  }
-
-  /* Content headings in sections */
-  .section-title, .page-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-style: italic;
-    letter-spacing: .6px;
-    text-transform: uppercase;
-  }
-
-
-
-
-
-/* ============================================
-   PSR MAROON THEME OVERRIDES FOR PRODUCT PAGES
-   ============================================ */
-
-:root {
-  --primary: #5a0f22 !important;
-  --brand-name: #5a0f22 !important;
+/* =======================================================
+   PSR COMPUTERS — PRODUCT PAGE (Maroon Professional Theme)
+   ======================================================= */
+
+/* Font Imports (same as main site) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.paysoft-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 6%;
+  background: linear-gradient(135deg, #fdfbfb, #f3e8eb);
+  border-bottom: 1px solid rgba(90, 15, 34, 0.1);
+}
+.paysoft-hero .left {
+  flex: 1 1 420px;
+  max-width: 620px;
+}
+.paysoft-hero h1 {
+  font-size: 2.9rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-style: italic;
+  letter-spacing: 0.4px;
+  margin-bottom: 10px;
+}
+.paysoft-hero .tagline {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.paysoft-hero p.lead {
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  margin-bottom: 22px;
+}
+.paysoft-hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 /* Buttons */
+.btn {
+  display: inline-block;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px 26px;
+}
 .btn-primary {
-  background: var(--primary) !important;
-  box-shadow: 0 0 15px rgba(90, 15, 34, 0.35) !important;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(90, 15, 34, 0.25);
 }
 .btn-primary:hover {
-  background: #7c1430 !important;
-  box-shadow: 0 0 22px rgba(90, 15, 34, 0.55) !important;
+  background: #7c1430;
+  box-shadow: 0 12px 28px rgba(90, 15, 34, 0.3);
 }
-
 .btn-ghost {
-  color: var(--primary) !important;
-  border-color: rgba(90, 15, 34, 0.25) !important;
+  border: 1px solid rgba(90, 15, 34, 0.25);
+  color: var(--primary);
+  background: transparent;
 }
 .btn-ghost:hover {
-  background: rgba(90, 15, 34, 0.08) !important;
-  box-shadow: 0 0 10px rgba(90, 15, 34, 0.28) !important;
+  background: rgba(90, 15, 34, 0.07);
+  box-shadow: 0 0 8px rgba(90, 15, 34, 0.15);
 }
 
-/* Slider dots */
-.dot.active {
-  background: var(--primary) !important;
+/* =========================================
+   IMAGE CAROUSEL
+========================================= */
+.carousel-wrap {
+  flex: 1 1 640px;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-
-/* Slide tooltip bubble */
+.slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0d0d0d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.slider-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1);
+}
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: zoom-in;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+.slide:hover img {
+  transform: scale(1.02);
+}
 .slide::after {
-  background: rgba(90, 15, 34, 0.92) !important;
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  background: rgba(90, 15, 34, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.25s ease;
+}
+.slide:hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* CTA Background Conversion */
+/* Dots */
+.dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(90, 15, 34, 0.25);
+  transition: all 0.2s ease;
+}
+.dot.active {
+  background: var(--primary);
+  transform: scale(1.2);
+}
+
+/* =========================================
+   FEATURES SECTION
+========================================= */
+.features {
+  padding: 80px 6%;
+  background: var(--section-bg);
+}
+.features h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 40px;
+  font-style: italic;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.feature {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+.feature h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.feature p {
+  color: #444;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CTA SECTION
+========================================= */
 .cta {
-  background: linear-gradient(135deg, #5a0f22 0%, #3d0b18 100%) !important;
+  padding: 90px 8%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  text-align: center;
+  color: #fff;
+}
+.cta-box {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 50px 40px;
+  border-radius: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+}
+.cta-box h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.cta-box p {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+  color: #f2f2f2;
+}
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 .cta-btn.primary {
   background: #fff;
-  color: var(--primary) !important;
+  color: var(--primary);
+  border-radius: 50px;
+  padding: 12px 34px;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
 }
 .cta-btn.primary:hover {
-  color: #fff !important;
-  background: transparent !important;
-  box-shadow: 0 0 30px rgba(255,255,255,0.6);
+  background: transparent;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 .cta-btn.secondary {
-  border-color: rgba(255,255,255,0.85) !important;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  color: #fff;
+  border-radius: 50px;
+  padding: 12px 34px;
+  transition: all 0.3s ease;
 }
 .cta-btn.secondary:hover {
-  background: rgba(255,255,255,0.15) !important;
+  background: rgba(255, 255, 255, 0.12);
 }
 
-/* Modal colors */
-.modal input:focus,
-.modal textarea:focus {
-  border-color: var(--primary) !important;
-  background: rgba(90, 15, 34, 0.15) !important;
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 768px) {
+  .paysoft-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+  .paysoft-hero h1 {
+    font-size: 2.2rem;
+  }
+  .cta-box h2 {
+    font-size: 1.8rem;
+  }
+  .cta-box {
+    padding: 40px 20px;
+  }
 }
 
+
+/* ==== FIX: DEMO MODAL LAYERING & POSITION ==== */
+.modal {
+  position: fixed !important;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999 !important; /* Always on top */
+}
+
+.modal.open {
+  display: flex !important;
+}
+
+.modal .backdrop {
+  position: fixed !important;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 9998 !important;
+}
+
+.modal-box {
+  position: relative;
+  z-index: 10000 !important;
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  color: #fff;
+  border-radius: 18px;
+  padding: 36px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  transform: scale(1);
+  opacity: 1;
+}
+/* =========================================================
+   FIXED: LIGHTBOX & MODAL — Fullscreen & Layer Consistency
+   ========================================================= */
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed !important;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 9998 !important;
+}
+.lightbox.open {
+  display: flex !important;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.6);
+  animation: zoomIn 0.3s ease;
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.lb-btn,
+.lb-close {
+  position: absolute;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+.lb-btn:hover,
+.lb-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+.lb-prev {
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lb-next {
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lb-close {
+  top: 20px;
+  right: 25px;
+}
+
+/* DEMO MODAL */
+.modal {
+  position: fixed !important;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000 !important;
+}
+.modal.open {
+  display: flex !important;
+}
+.modal .backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+}
+.modal-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  color: #fff;
+  padding: 40px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+  max-width: 520px;
+  width: 90%;
+  z-index: 10000;
+  animation: modalFade 0.3s ease;
+}
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.close-x {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.close-x:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+.modal .btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.modal .btn.cancel {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
 .modal .btn.send {
-  background: var(--primary) !important;
-  box-shadow: 0 0 18px rgba(90,15,34,0.5) !important;
+  background: #5a0f22;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(90, 15, 34, 0.5);
 }
 .modal .btn.send:hover {
-  background: #7c1430 !important;
-  box-shadow: 0 0 26px rgba(90,15,34,0.7) !important;
+  background: #7c1430;
 }
-
-/* Headings underline */
-h1::after, h2::after {
-  background: var(--primary) !important;
-}
-
-/* Footer consistency */
-.footer-company-name {
-  color: #fff !important;
-}
-.footer-logo {
-  filter: drop-shadow(0 0 14px rgba(255,255,255,0.95)) !important;
+body.no-scroll {
+  overflow: hidden;
 }
 
 

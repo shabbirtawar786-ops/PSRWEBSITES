@@ -1,8 +1,3 @@
-
-
-
-
-
 // ===============================
 //  IMAGE SLIDER / CAROUSEL
 // ===============================
@@ -28,7 +23,7 @@ dots.forEach(dot => {
 setInterval(() => updateSlider(index + 1), 5000);
 
 
-// ===============================
+
 //  LIGHTBOX (fullscreen view)
 // ===============================
 const lightbox = document.getElementById("lightbox");

@@ -4,87 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>P.S.R.Computers - Home</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="luxury-mode">
 
-<!-- nav bar -->
-<header>
-  <div class="nav-blur">
-    <div class="container nav-flex">
-      <div class="brand">
-        <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
-        <span class="company-name">P.S.R.Computers</span>
-      </div>
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav-blur">
+      <div class="container nav-flex">
+        <div class="brand">
+          <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
+          <span class="company-name">P.S.R.Computers</span>
+        </div>
 
-      <nav>
         <ul class="nav-links" id="navbar-links">
-          <li><a href="index.html">Home</a></li>
+  <li><a href="index.html">Home</a></li>
 
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">
-              Product <i class="fas fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="exam.html">Exam Tracking</a></li>
-              <li><a href="fee.html">Fee Tracking</a></li>
-              <li><a href="library.html">Library</a></li>
-              <li><a href="paysoft.html">Paysoft</a></li>
-              <li><a href="contax.html">Contax</a></li>
+  <!-- ✅ Single List Product Dropdown -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      Product <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+    </a>
+    <ul class="dropdown-menu" aria-label="Product submenu">
+      <li><a href="paysoft.html">Payroll Management</a></li>
+      <li><a href="contax.html">TDS Management (26Q & 24Q)</a></li>
+      <li><a href="exam.html">Exam Management</a></li>
+      <li><a href="fee.html">Fee Management</a></li>
+      <li><a href="library.html">Library Management</a></li>
+      <li><a href="leavesoft.html">Leave Management</a></li>
+      <li><a href="stusoft.html">Student Management</a></li>
+      <li><a href="inventory.html">Inventory Management</a></li>
+    </ul>
+  </li>
 
-              <li class="dropdown-sub">
-                <a href="#" class="dropdown-sub-toggle">
-                  Development <i class="fas fa-caret-right sub-icon"></i>
-                </a>
-                <ul class="dropdown-submenu">
-                  <li><a href="leavesoft.html">Leavesoft</a></li>
-                  <li><a href="stusoft.html">Stusoft</a></li>
-                  <li><a href="inventory.html">Inventory</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+  <!-- ✅ About Dropdown (Restored) -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      About <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+    </a>
+    <ul class="dropdown-menu" aria-label="About submenu">
+      <li><a href="company.html">Company</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+    </ul>
+  </li>
 
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">
-              About <i class="fas fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="why-us.html">Why Us</a></li>
-            </ul>
-          </li>
+  <!-- Other standard links -->
+  <li><a href="pricing.html">Pricing</a></li>
+  <li><a href="contactus.html">ContactUs</a></li>
+  <li><a href="news.html">News</a></li>
+</ul>
 
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contactus.html">ContactUs</a></li>
-          <li><a href="news.html">News</a></li>
-        </ul>
-      </nav>
 
-      <button class="hamburger" id="hamburger">&#9776;</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="navbar-links" aria-expanded="false">
+          &#9776;
+        </button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<div class="menu-overlay" id="menuOverlay"></div>
+  <div class="menu-overlay" id="menuOverlay" tabindex="-1" aria-hidden="true"></div>
 
-
-   <!-- ===== HERO SLIDER ===== -->
-  <section class="hero-slider">
-
+  <!-- ===== HERO SLIDER ===== -->
+  <section class="hero-slider" aria-roledescription="carousel">
     <div class="slider-container">
-      
       <!-- Slide 1 -->
-      <div class="hero-slide active" onclick="openLink('pricing.html')">
+      <div class="hero-slide active" onclick="openLink('pricing.html')" role="group" aria-label="Slide 1">
         <div class="container hero-flex">
           <div class="hero-content">
             <h1>
               Customized Software Specialist for Educational Institutes<br />
-              TDS Compliance with Ease!
+              "TDS Compliance with Ease!"
             </h1>
             <p>
               We specialize in developing customized software solutions tailored to
@@ -99,13 +94,12 @@
       </div>
 
       <!-- Slide 2 -->
-      <div class="hero-slide" onclick="openLink('pricing.html')">
+      <div class="hero-slide" onclick="openLink('pricing.html')" role="group" aria-label="Slide 2">
         <div class="container hero-flex">
           <div class="hero-content">
             <h1>Smart ERP Solutions for Modern Institutions</h1>
             <p>
-             Manage student records, staff, finance, attendance, fees, and reports —
-              all under one integrated ERP system designed for educational success.
+             Manage student records, staff, finance, attendance, fees, and reports — all under one integrated ERP system designed for educational success.
             </p>
             <button class="read-more" onclick="event.stopPropagation(); openLink('products.html')">Read More</button>
           </div>
@@ -116,7 +110,7 @@
       </div>
 
       <!-- Slide 3 -->
-      <div class="hero-slide" onclick="openLink('library.html')">
+      <div class="hero-slide" onclick="openLink('library.html')" role="group" aria-label="Slide 3">
         <div class="container hero-flex">
           <div class="hero-content">
             <h1>Smart Tax Solutions You Can Trust</h1>
@@ -126,28 +120,29 @@
             <button class="read-more" onclick="event.stopPropagation(); openLink('library.html')">Read More</button>
           </div>
           <div class="hero-image">
-            <img src="images/tax.png" alt="Library Management" />
+            <img src="images/tax.png" alt="Tax Services" />
           </div>
         </div>
       </div>
     </div>
 
     <!-- Arrows -->
-    <button class="arrow prev" onclick="prevSlide()">&#10094;</button>
-    <button class="arrow next" onclick="nextSlide()">&#10095;</button>
+    <button class="arrow prev" type="button" aria-label="Previous slide" onclick="prevSlide()">
+      &#10094;
+    </button>
+    <button class="arrow next" type="button" aria-label="Next slide" onclick="nextSlide()">
+      &#10095;
+    </button>
 
-    <!-- Dots -->
-    <div class="dots"></div>
+    <!-- Dots (populated by script) -->
+    <div class="dots" role="tablist" aria-label="Slide controls"></div>
   </section>
 
-
-
-
   <!-- Trusted By Section -->
-  <section class="trusted-section">
+  <section class="trusted-section" aria-label="Trusted by">
     <div class="trusted-label">Trusted by</div>
     <div class="brand-slider glow-box" id="brandSlider">
-      <div class="brand-track">
+      <div class="brand-track" aria-hidden="false">
         <span class="brand glow-brand">Ryan Group Of Institution</span>
         <span class="brand glow-brand">Ryan Christian School</span>
         <span class="brand glow-brand">Ryan Global School</span>
@@ -163,220 +158,279 @@
     </div>
   </section>
 
-  <!-- About Us -->
-  <section class="about-us-section">
-    <div class="container about-flex">
-      <div class="about-content">
-        <h2>About US</h2>
-        <p>
-          <strong>P.S.R.Computers</strong> Founded & established in 1994 by the name
-          P.S.R.Computers , with an idea, objective & sole purpose to involve
-          information technology thru computers to all educational institutions,
-          companies / firms, by way of proper customized developed software to
-          track day-to-day routine and regular administrative jobs.
-        </p>
-        <ul>
-          <li>💡 Expertise in software for schools, colleges, and businesses</li>
-          <li>⚡ Fast, supportive, and up-to-date with the latest tech</li>
-          <li>🤝 Personal approach: we care about your vision and growth</li>
-          <li>🔒 Security and compliance are always our top priorities</li>
-        </ul>
-      </div>
-      <div class="about-image">
-        <img
-          src="images/about-ab.png"
-          alt="Our Team at Work"
-        />
-      </div>
+  
+<!-- ========================= ABOUT US ========================= -->
+<!-- ========================= ABOUT US ========================= -->
+<section class="about-us-section">
+  <div class="about-content">
+    <h2 class="section-title"><span>01</span> About Us</h2>
+    <p class="section-subtitle">Building trust through technology since 1994</p>
+    <p>
+      <strong>P.S.R. Computers</strong> was founded in 1994 with a clear purpose:
+      to empower educational institutions and businesses with efficient,
+      customized software solutions. For over three decades, we’ve combined
+      innovation, reliability, and personal commitment to simplify
+      administration and accelerate digital transformation.
+    </p>
+    <ul class="info-list">
+      <li><i class="fas fa-lightbulb"></i> Smart, future-ready technology for institutions</li>
+      <li><i class="fas fa-bolt"></i> Fast, responsive service you can count on</li>
+      <li><i class="fas fa-handshake"></i> Long-term partnerships built on trust</li>
+      <li><i class="fas fa-lock"></i> Security and compliance at every step</li>
+    </ul>
+    <div class="stats">
+      <div class="stat"><h3>30+</h3><p>Years of Experience</p></div>
+      <div class="stat"><h3>200+</h3><p>Institutions Served</p></div>
+      <div class="stat"><h3>100%</h3><p>Client Satisfaction</p></div>
     </div>
-  </section>
+    <a href="company.html" class="btn-learn">Learn More</a>
+  </div>
 
-  <section class="about-us-section">
-    <div class="container about-flex">
-      <div class="about-content">
-        <h2>Software Development</h2>
-        <p>
-          <strong>P.S.R.Computers</strong> Our Software Development Department specializes in designing, developing, and implementing customized software solutions tailored to the unique needs of educational institutions.
-           We continuously upgrade our systems to meet evolving administrative requirements and technological standards.
-        </p>
-        <ul>
-          <li>💻 Tailored software crafted for educational excellence</li>
-          <li>⚙️ Continuous updates to match evolving institutional needs</li>
-          <li>👨‍💻 Expert developers ensuring reliability and performance</li>
-          <li>📈 Comprehensive solutions simplifying administration</li>
-        </ul>
-      </div>
-      <div class="about-image">
-        <img
-          src="images/software-about.png"
-          alt="Our Team at Work"
-        />
-      </div>
+  <div class="about-image">
+    <img src="images/about-ab.png" alt="Our Team at Work" />
+  </div>
+</section>
+
+<!-- 🌊 Wave Divider between sections -->
+<div class="section-divider wave-divider"></div>
+
+<!-- ========================= SOFTWARE DEVELOPMENT ========================= -->
+<section class="about-us-section">
+  <div class="about-image">
+    <img src="images/software-about.png" alt="Software Development" />
+  </div>
+
+  <div class="about-content">
+    <h2 class="section-title"><span>02</span> Software Development</h2>
+    <p class="section-subtitle">Innovation that simplifies management</p>
+    <p>
+      Our Software Development Division crafts intuitive, secure, and
+      performance-driven systems customized for educational and enterprise
+      environments. We ensure that every solution we build aligns perfectly
+      with your operational workflow and future goals.
+    </p>
+    <ul class="info-list">
+      <li><i class="fas fa-cogs"></i> Fully customized ERP solutions</li>
+      <li><i class="fas fa-sync-alt"></i> Seamless integration & data migration</li>
+      <li><i class="fas fa-user-shield"></i> Secure, scalable architecture</li>
+      <li><i class="fas fa-chart-line"></i> Real-time analytics and reporting</li>
+    </ul>
+    <div class="stats">
+      <div class="stat"><h3>99.9%</h3><p>System Uptime</p></div>
+      <div class="stat"><h3>50K+</h3><p>Active Users</p></div>
+      <div class="stat"><h3>24×7</h3><p>Technical Support</p></div>
     </div>
-  </section>
+    <a href="software.html" class="btn-learn">Learn More</a>
+  </div>
+</section>
 
+<!-- 🌊 Reverse Wave Divider -->
+<div class="section-divider wave-divider reverse"></div>
 
-  <section class="about-us-section">
-    <div class="container about-flex">
-      <div class="about-content">
-        <h2>Tax consyltancy</h2>
-        <p>
-          <strong>P.S.R.Computers</strong> Our Tax Consultancy Department offers complete income tax solutions, including filing regular and revised quarterly returns,
-           managing TDS compliance, and providing expert advisory services. We handle all interactions with the Income Tax Department on behalf of clients, ensuring accuracy, compliance, and timely resolution.
-        </p>
-        <ul>
-          <li>🧾 Comprehensive income tax & TDS filing for all entities</li>
-          <li>📞 Proactive communication with IT Department for issue resolution</li>
-          <li>💡 Expert consultancy on ever-changing tax laws and updates</li>
-          <li>⚙️ Accurate, timely, and transparent reporting every quarter</li>
-        </ul>
-      </div>
-      <div class="about-image">
-        <img
-          src="images/tax-about.png"
-          alt="Our Team at Work"
-        />
-      </div>
+<!-- ========================= TAX CONSULTANCY ========================= -->
+<section class="about-us-section">
+  <div class="about-content">
+    <h2 class="section-title"><span>03</span> Tax Consultancy</h2>
+    <p class="section-subtitle">Accuracy. Compliance. Peace of Mind.</p>
+    <p>
+      <strong>P.S.R. Computers</strong> offers comprehensive tax and TDS
+      consultancy services that make compliance effortless. From accurate
+      filings to strategic planning, we handle it all — so you can focus on
+      growth while staying fully compliant.
+    </p>
+    <ul class="info-list">
+      <li><i class="fas fa-file-invoice-dollar"></i> Full TDS & Income Tax Management</li>
+      <li><i class="fas fa-balance-scale"></i> Transparent processes, zero stress</li>
+      <li><i class="fas fa-user-tie"></i> Dedicated consultants & advisory support</li>
+      <li><i class="fas fa-shield-alt"></i> Secure data handling and audit-ready reports</li>
+    </ul>
+    <div class="stats">
+      <div class="stat"><h3>10K+</h3><p>Returns Processed</p></div>
+      <div class="stat"><h3>0%</h3><p>Error Rate</p></div>
+      <div class="stat"><h3>25+</h3><p>Corporate Clients</p></div>
     </div>
-  </section>
+    <a href="contax.html" class="btn-learn">Learn More</a>
+  </div>
 
-  <!-- Contact / Email Section -->
-<section class="contact-wrapper">
-  <div class="contact-container">
-    <h2>Get in Touch</h2>
-    <p>Have a question, feedback, or want to collaborate? Fill out the form below and we’ll get back to you soon.</p>
-
-    <form id="emailForm">
-      <div class="input-row">
-        <div class="input-group">
-          <label for="userEmail">Your Email</label>
-          <input type="email" id="userEmail" name="userEmail" required placeholder="you@example.com">
-        </div>
-      </div>
-
-      <div class="input-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
-      </div>
-
-      <button type="submit" class="send-btn">Send Message</button>
-      <div id="status"></div>
-    </form>
+  <div class="about-image">
+    <img src="images/tax-about.png" alt="Tax Consultancy" />
   </div>
 </section>
 
 
 
-<!-- socail bar -->
-  <div class="social-bar">
-    <a href="https://linkedin.com/in/your-linkedin-id" class="linkedin" target="_blank" title="LinkedIn">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-    <a href="https://instagram.com/your-instagram-id" class="instagram" target="_blank" title="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://facebook.com/your-facebook-id" class="facebook" target="_blank" title="Facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://twitter.com/your-twitter-id" class="twitter" target="_blank" title="Twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
-  </div>
+  <!-- Contact / Email Section -->
+  <section class="contact-wrapper" aria-label="Contact">
+    <div class="contact-container">
+      <h2>Get in Touch</h2>
+      <p>Have a question, feedback, or want to collaborate? Fill out the form below and we’ll get back to you soon.</p>
 
- <!-- WhatsApp Floating Button -->
-<div class="whatsapp-float-btn">
-  <a href="https://wa.me/919811250222" target="_blank" aria-label="Chat on WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
-  </a>
-</div>
-
-<!-- FOOTER -->
-<footer class="main-footer">
-  <div class="footer-top-glow"></div>
-  <div class="footer-content">
-    <!-- Logo & Address -->
-    <div class="footer-col logo-address">
-      <div class="footer-brand">
-        <img src="images/logore.png" alt="PSR Computers Logo" class="footer-logo" />
-        <span class="footer-company-name">P.S.R.Computers</span>
-      </div>
-
-      <address>
-        <h4>Office Address</h4>
-        Plot no. 165, First Floor,<br />
-        Pocket 1, Rohini Sector 25,<br />
-        Delhi 110085
-      </address>
-
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
-        target="_blank"
-        class="map-link"
-      >
-        📍 View on Map
-      </a>
-    </div>
-
-    <!-- Services -->
-    <div class="footer-col footer-services">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#">Web Development</a></li>
-        <li><a href="#">Payroll Automation</a></li>
-        <li><a href="#">API Integration</a></li>
-        <li><a href="#">IT Consulting</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact -->
-    <div class="footer-col contact">
-      <h4>Contact</h4>
-      <div class="contact-info">
-        <div>
-          <strong>Email:</strong><br />
-          <a href="mailto:psrcomputers@gmail.com">psrcomputers@gmail.com</a><br />
-          <a href="mailto:sudeep.palimar@psrcomputers.com">sudeep.palimar@psrcomputers.com</a><br />
-          <a href="mailto:shubhadeepa.s@gmail.com">shubhadeepa.s@gmail.com</a>
+      <form id="emailForm">
+        <div class="input-row">
+          <div class="input-group">
+            <label for="userEmail">Your Email</label>
+            <input type="email" id="userEmail" name="userEmail" required placeholder="you@example.com" />
+          </div>
         </div>
-        <div>
-          <strong>Phone:</strong><br />
-          <a href="tel:+918448663060">+91 8448663060</a><br />
-          <a href="tel:+919811250222">+91 9811250222</a>
+
+        <div class="input-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
+        </div>
+
+        <button type="submit" class="send-btn">Send Message</button>
+        <div id="status" aria-live="polite" role="status"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Social bar -->
+  <div class="social-bar" aria-hidden="false">
+    <a href="https://linkedin.com/in/your-linkedin-id" class="linkedin" target="_blank" title="LinkedIn" rel="noreferrer">
+      <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+    </a>
+    <a href="https://instagram.com/your-instagram-id" class="instagram" target="_blank" title="Instagram" rel="noreferrer">
+      <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
+    <a href="https://facebook.com/your-facebook-id" class="facebook" target="_blank" title="Facebook" rel="noreferrer">
+      <i class="fab fa-facebook-f" aria-hidden="true"></i>
+    </a>
+    <a href="https://twitter.com/your-twitter-id" class="twitter" target="_blank" title="Twitter" rel="noreferrer">
+      <i class="fab fa-twitter" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <div class="whatsapp-float-btn" aria-hidden="false">
+    <a href="https://wa.me/919811250222" target="_blank" aria-label="Chat on WhatsApp" rel="noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="main-footer" role="contentinfo">
+    <div class="footer-top-glow" aria-hidden="true"></div>
+
+    <div class="footer-content">
+      <!-- Logo & Address -->
+      <div class="footer-col logo-address">
+        <div class="footer-brand">
+          <img src="images/logore.png" alt="PSR Computers Logo" class="footer-logo" />
+          <span class="footer-company-name">P.S.R.Computers</span>
+        </div>
+
+        <address>
+          <h4>Office Address</h4>
+          Plot no. 165, First Floor,<br />
+          Pocket 1, Rohini Sector 25,<br />
+          Delhi 110085
+        </address>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
+          target="_blank"
+          class="map-link"
+          rel="noreferrer"
+          >📍 View on Map</a
+        >
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Payroll Automation</a></li>
+          <li><a href="#">API Integration</a></li>
+          <li><a href="#">IT Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <div class="contact-info">
+          <div>
+            <strong>Email:</strong><br />
+            <a href="mailto:psrcomputers@gmail.com">psrcomputers@gmail.com</a><br />
+            <a href="mailto:sudeep.palimar@psrcomputers.com">sudeep.palimar@psrcomputers.com</a><br />
+           
+          </div>
+          <div style="margin-top:12px;">
+            <strong>Phone:</strong><br />
+            <a href="tel:+919811250222">+91 9811250222</a>
+          </div>
+        </div>
+
+        <div class="footer-social" aria-label="Social links">
+          <a href="https://linkedin.com" class="icon linkedin" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://instagram.com" class="icon instagram" target="_blank" rel="noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://facebook.com" class="icon facebook" target="_blank" rel="noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://twitter.com" class="icon twitter" target="_blank" rel="noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://wa.me/918448663060" class="icon whatsapp" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
         </div>
       </div>
 
-      <div class="footer-social">
-        <a href="https://linkedin.com" class="icon linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://instagram.com" class="icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com" class="icon facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com" class="icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/918448663060" class="icon whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <!-- Map -->
+      <div class="footer-col map-embed">
+        <h4>Location Map</h4>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="images/map.png" alt="Map Preview" class="map-preview" />
+        </a>
       </div>
     </div>
 
-    <!-- Map -->
-    <div class="footer-col map-embed">
-      <h4>Location Map</h4>
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
-        target="_blank"
-      >
-        <img src="images/map.png" alt="Map Preview" class="map-preview" />
-      </a>
+    <div class="footer-divider" aria-hidden="true"></div>
+
+    <div class="footer-copyright">
+      © <span id="year" aria-hidden="false"></span> P.S.R.Computers. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- COOKIE MODAL (will be controlled by script.js) -->
+  <div id="cookieModal" style="display:none;">
+    <div class="cookie-modal" role="dialog" aria-modal="true" aria-label="Cookie preferences">
+      <h3>Cookie preferences</h3>
+      <p>We use cookies to improve your experience. You can change your preferences below.</p>
+
+      <div class="cookie-switches">
+        <div class="cookie-row">
+          <div>Essential cookies</div>
+          <label class="switch">
+            <input type="checkbox" checked disabled />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="cookie-row">
+          <div>Analytics</div>
+          <label class="switch">
+            <input type="checkbox" id="analyticsCookie" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="cookie-row">
+          <div>Marketing</div>
+          <label class="switch">
+            <input type="checkbox" id="marketingCookie" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="cookie-actions">
+        <button type="button" class="save" id="cookieSave">Save preferences</button>
+        <button type="button" class="accept" id="cookieAccept">Accept all</button>
+      </div>
     </div>
   </div>
 
-  <div class="footer-divider"></div>
-
-  <div class="footer-copyright">
-    © <span id="year"></span> PSR Computers. All Rights Reserved.
-  </div>
-</footer>
-
-
-
+  <!-- Main script (will be replaced/optimized next) -->
   <script src="script.js"></script>
-
-
 </body>
 </html>
