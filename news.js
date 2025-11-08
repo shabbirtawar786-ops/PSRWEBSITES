@@ -1,73 +1,25 @@
-// Wait for DOM
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
-  const overlay = document.querySelector(".menu-overlay");
-  const dropdownToggles = document.querySelectorAll(".dropdown > a");
-  const subDropdownToggles = document.querySelectorAll(".dropdown-sub-toggle");
+document.addEventListener("DOMContentLoaded", async () => {
+  const container = document.getElementById("trending-container");
 
-  /* ------------------------------
-     Hamburger Menu Toggle
-  ------------------------------ */
-  hamburger.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
-    overlay.classList.toggle("show", isOpen);
-    document.body.classList.toggle("no-scroll", isOpen);
-  });
+  try {
+    // Use your chosen RSS feed URL:
+    const rssUrl = "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms";  // example TOI feed
+    const response = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`);
+    const text  = await response.text();
+    const parser = new DOMParser();
+    const xml   = parser.parseFromString(text, "application/xml");
+    const items = xml.querySelectorAll("item");
 
-  /* ------------------------------
-     Overlay Close on Click
-  ------------------------------ */
-  overlay.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    overlay.classList.remove("show");
-    document.body.classList.remove("no-scroll");
-  });
-
-  /* ------------------------------
-     Dropdown Toggle (Mobile Only)
-  ------------------------------ */
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener("click", e => {
-      const parent = toggle.parentElement;
-      const icon = toggle.querySelector(".dropdown-icon");
-
-      // Only run on mobile
-      if (window.innerWidth <= 700) {
-        e.preventDefault();
-
-        // Toggle the dropdown open/close
-        parent.classList.toggle("open");
-        if (icon) icon.classList.toggle("rotate");
-      }
-    });
-  });
-
-  /* ------------------------------
-     Sub-Dropdown (Mobile Only)
-  ------------------------------ */
-  subDropdownToggles.forEach(subToggle => {
-    subToggle.addEventListener("click", e => {
-      const parent = subToggle.parentElement;
-
-      if (window.innerWidth <= 700) {
-        e.preventDefault();
-        parent.classList.toggle("open");
-      }
-    });
-  });
-
-  /* ------------------------------
-     Close mobile menu when resizing to desktop
-  ------------------------------ */
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 700) {
-      navLinks.classList.remove("open");
-      overlay.classList.remove("show");
-      document.body.classList.remove("no-scroll");
-      document
-        .querySelectorAll(".dropdown, .dropdown-sub")
-        .forEach(el => el.classList.remove("open"));
+    if (items.length) {
+      const headlines = Array.from(items).slice(0, 5).map(item => {
+        return item.querySelector("title").textContent.trim();
+      });
+      container.innerHTML = `<p>${headlines.join(" • ")}</p>`;
+    } else {
+      container.innerHTML = "<p>No trending headlines right now.</p>";
     }
-  });
+  } catch (err) {
+    console.error("Error loading RSS feed:", err);
+    container.innerHTML = "<p>Unable to load trending news.</p>";
+  }
 });

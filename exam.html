@@ -154,10 +154,7 @@
         <h3>Total Data Security:</h3>
         <p>Your student's data is always safe and secure. With built-in security protocols, Exam Tracking Software ensures that only authorized personnel can access sensitive data, maintaining the privacy and integrity of your records.</p>
       </div>
-      <div class="feature">
-        <h3>Scalable & Customizable:</h3>
-        <p> The software is designed to grow with your institution. It handles large volumes of data efficiently, adapts to changing exam formats, and can be customized to fit specific institutional requirements.</p>
-      </div>
+      
       </div>
     </div>
   </section>
@@ -166,48 +163,61 @@
 <section class="cta" id="contact">
   <div class="cta-box">
     <h2>“Empower Your Institution with Exam Tracking Software”</h2>
-    <p>Exam Tracking Software combines ease of use, accuracy, and security—offering educational institutions a reliable tool 
-        to manage student exams, generate reports, and maintain data confidentiality. It’s not just a tool for exam management; 
-        it's a trusted partner in academic success.</p>
+    <p>
+      Exam Tracking Software combines ease of use, accuracy, and security—offering educational institutions a reliable tool 
+      to manage student exams, generate reports, and maintain data confidentiality. It’s not just a tool for exam management; 
+      it's a trusted partner in academic success.
+    </p>
     <div class="cta-buttons">
-      <button class="cta-btn primary" id="requestDemoBtnBottom">Request Demo</button>
-      <a href="#features" class="cta-btn secondary">See Features</a>
+      <button class="cta-btn primary" id="requestDemoBtn">Get a Demo</button>
+      <button class="cta-btn secondary" id="requestDemoBtnBottom">Request Demo</button>
     </div>
   </div>
 </section>
-
-
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <div class="overlay" id="lbOverlay"></div>
-  <button class="lb-btn lb-prev" id="lbPrev">‹</button>
-  <div class="panel">
-    <img id="lbImage" src="" alt="Zoomed Image">
-  </div>
-  <button class="lb-btn lb-next" id="lbNext">›</button>
-  <button class="lb-close" id="lbClose">×</button>
-</div>
 
 <!-- Demo Modal -->
 <div class="modal" id="demoModal">
   <div class="backdrop" id="modalBackdrop"></div>
   <div class="modal-box">
-    <div class="close-x" id="modalClose">×</div>
-    <h3>Request a Demo</h3>
-    <p>Enter your email and a brief message — our team will contact you shortly to schedule your personalized demo.</p>
+    <button class="close-x" id="modalClose">&times;</button>
 
-    <label>Email</label>
-    <input type="email" id="demoEmail" placeholder="you@company.com" required>
+    <h3 class="modal-title">Request a Demo</h3>
+    <p class="modal-subtitle">
+      Enter your email and a brief message — our team will reach out shortly to schedule your personalized demo.
+    </p>
 
-    <label>Message</label>
-    <textarea id="demoMessage" placeholder="Tell us about your requirements..."></textarea>
+    <form id="demoForm">
+      <div class="input-group">
+        <label for="demoEmail">Email</label>
+        <input type="email" id="demoEmail" placeholder="you@company.com" required />
+      </div>
 
-    <div class="modal-actions">
-      <button class="btn cancel" id="modalCancel">Cancel</button>
-      <button class="btn send" id="modalSend">Send Request</button>
-    </div>
+      <div class="input-group">
+        <label for="demoMessage">Message</label>
+        <textarea id="demoMessage" placeholder="Tell us about your requirements..."></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn cancel" id="modalCancel">Cancel</button>
+        <button type="submit" class="btn send" id="modalSend">Send Request</button>
+      </div>
+    </form>
   </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="overlay" id="lbOverlay"></div>
+  
+  <div class="lb-container">
+    <button class="lb-btn lb-prev" id="lbPrev">‹</button>
+    <div class="panel">
+      <img id="lbImage" src="" alt="Zoomed Image">
+    </div>
+    <button class="lb-btn lb-next" id="lbNext">›</button>
+  </div>
+
+  <button class="lb-close" id="lbClose">×</button>
 </div>
 
 

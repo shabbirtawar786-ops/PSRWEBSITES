@@ -3,10 +3,10 @@ const products = {
   exam: {
     name: "Exam Tracking",
     features: [
-      { name: "Tracks marks of exams of students", basic: false, standard: false, premium: true },
+      { name: "Tracks marks of exams of students", basic: true, standard: true, premium: true },
       { name: "Auto grade calculation", basic: false, standard: true, premium: true },
       { name: "Generate performance report", basic: false, standard: true, premium: true },
-      { name: "Parent notification system", basic: false, standard: false, premium: true },
+      { name: "Parent notification system", basic: true, standard: false, premium: true },
     ],
   },
   fee: {

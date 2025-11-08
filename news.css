@@ -1,160 +1,194 @@
-/* News Hero */
+:root {
+  --primary: #5a0f22;
+  --accent: #b52b4a;
+  --text-light: #ffffff;
+  --text-dark: #1e1e1e;
+  --bg-light: #faf7f8;
+}
+
+/* ===== HERO SECTION ===== */
 .news-hero {
-  background: linear-gradient(90deg, #eef7ff 0%, #f8fbff 100%);
-  padding: 3em 1em;
+  background: linear-gradient(135deg, #5a0f22, #7a1c32);
+  color: var(--text-light);
+  padding: 100px 20px;
+  
   text-align: center;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(90, 15, 34, 0.25);
 }
 
-.featured-news-card {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  display: inline-block;
-  padding: 2em;
-  max-width: 650px;
-  animation: fadeIn 1s ease;
+.hero-container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.featured-news-card img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1.5em;
+.hero-text h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.featured-news-card h2 {
-  font-size: 2em;
-  color: #0a3d62;
+.hero-text p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #f6d9de;
+  max-width: 750px;
+  margin: 0 auto;
 }
 
-.featured-news-card p {
-  font-size: 1.1em;
-  color: #555;
-}
-
-/* News Section */
+/* ===== NEWS SECTION ===== */
 .news-list {
-  margin: 4em auto;
+  margin: 80px auto;
   max-width: 1200px;
-  padding: 2em;
+  padding: 0 20px;
   text-align: center;
 }
 
-.news-list h3 {
-  font-size: 1.8em;
-  margin-bottom: 1.5em;
-  color: #004b87;
+.news-list h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 40px;
+  font-weight: 700;
+  position: relative;
 }
 
+.news-list h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  margin: 10px auto 0;
+  border-radius: 3px;
+}
+
+/* ===== NEWS GRID ===== */
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 2em;
-  animation: fadeInUp 1.2s ease;
+}
+.trending-marquee p {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scrollText 10s linear infinite;
 }
 
+/* ===== NEWS CARD ===== */
 .news-card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  padding: 1.5em;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-  transform: translateY(0);
 }
 
 .news-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px rgba(90, 15, 34, 0.25);
 }
 
 .news-card img {
   width: 100%;
-  height: 180px;
+  height: 190px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1em;
 }
 
-.news-card h4 {
-  font-size: 1.15em;
-  color: #0a3d62;
+.news-info {
+  padding: 1.5em;
+  text-align: left;
+}
+
+.news-info h3 {
+  color: var(--primary);
+  font-size: 1.2em;
+  font-weight: 700;
   margin-bottom: 0.5em;
 }
 
-.news-card p {
-  font-size: 0.98em;
-  color: #555;
+.news-info p {
+  color: #444;
+  font-size: 0.96em;
   margin-bottom: 1em;
+  line-height: 1.6;
 }
 
-.news-card .btn {
-  margin-top: auto;
-  align-self: flex-start;
-  background: #1e90ff;
+.news-info .btn {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   color: #fff;
-  padding: 0.55em 1.4em;
+  padding: 0.6em 1.4em;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.news-card .btn:hover {
-  background: #0077e6;
-}
-
-/* Load More Button */
-.load-more {
-  display: inline-block;
-  margin-top: 3em;
-  padding: 0.9em 2.4em;
-  background: #0a3d62;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
   font-weight: 600;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
-.load-more:hover {
-  background: #004b87;
+.news-info .btn:hover {
+  background: linear-gradient(90deg, var(--accent), var(--primary));
   transform: translateY(-2px);
 }
 
-/* Animation Keyframes */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-text h1 { font-size: 2rem; }
+  .hero-text p { font-size: 1rem; }
+  .news-info h3 { font-size: 1.05em; }
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 700px) {
-  .news-grid { grid-template-columns: 1fr; }
-  .featured-news-card { padding: 1em; }
-  .news-list { padding: 1em; }
-}
-
-
-/* Existing styles remain same */
-
-/* Hidden state for load more cards */
-.hidden-card {
-  display: none;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease;
-}
-
-/* When visible */
-.hidden-card.show {
+/* ===== TRENDING STRIP ===== */
+.trending-strip {
   display: flex;
-  opacity: 1;
-  transform: translateY(0);
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #5a0f22, #7a1c32);
+  color: #fff;
+  padding: 0.8em 1.2em;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(90, 15, 34, 0.3);
+}
+
+.trending-title {
+  background: #fff;
+  color: #5a0f22;
+  font-weight: 700;
+  padding: 0.4em 0.9em;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.trending-marquee {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Scrolling text */
+.trending-marquee p {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scrollText 40s linear infinite; /* 👈 slower scroll */
+  font-size: 0.95rem;
+  color: #fff3f5;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+}
+
+/* Pause animation when hovered */
+.trending-marquee:hover p {
+  animation-play-state: paused;
+}
+
+/* Smooth horizontal movement */
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }

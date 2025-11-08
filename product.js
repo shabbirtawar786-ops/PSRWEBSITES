@@ -63,44 +63,6 @@ lbNext.addEventListener("click", () => {
 });
 
 
-// ===============================
-// === DEMO REQUEST MODAL ===
-const modal = document.getElementById("demoModal");
-const modalClose = document.getElementById("modalClose");
-const modalBackdrop = document.getElementById("modalBackdrop");
-const modalCancel = document.getElementById("modalCancel");
-const modalSend = document.getElementById("modalSend");
-
-const demoButtons = document.querySelectorAll("#requestDemoBtn, #requestDemoBtnBottom");
-
-demoButtons.forEach(btn => {
-  if (btn) {
-    btn.addEventListener("click", () => {
-      modal.classList.add("open");
-      document.body.classList.add("no-scroll");
-    });
-  }
-});
-
-function closeModal() {
-  modal.classList.remove("open");
-  document.body.classList.remove("no-scroll");
-}
-
-[modalClose, modalBackdrop, modalCancel].forEach(el => {
-  el.addEventListener("click", closeModal);
-});
-
-modalSend.addEventListener("click", () => {
-  const email = document.getElementById("demoEmail").value.trim();
-  if (!email) {
-    alert("Please enter your email before sending!");
-    return;
-  }
-  alert("✅ Thank you! Your demo request has been submitted.");
-  closeModal();
-});
-
 
 // AUTO YEAR UPDATE
 document.addEventListener("DOMContentLoaded", () => {
@@ -258,4 +220,57 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach(el => el.classList.remove("open"));
     }
   });
+});
+
+
+
+// === DEMO REQUEST MODAL ===
+const modal = document.getElementById("demoModal");
+const modalBox = modal.querySelector(".modal-box");
+const modalClose = document.getElementById("modalClose");
+const modalBackdrop = document.getElementById("modalBackdrop");
+const modalCancel = document.getElementById("modalCancel");
+const demoForm = document.getElementById("demoForm");
+
+const demoButtons = document.querySelectorAll("#requestDemoBtn, #requestDemoBtnBottom");
+
+demoButtons.forEach(btn => {
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.add("open");
+      document.body.style.overflow = "hidden";
+    });
+  }
+});
+
+function closeModal() {
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+// Close only when clicking backdrop itself, not inside box
+modal.addEventListener("click", (e) => {
+  if (e.target === modal || e.target === modalBackdrop) {
+    closeModal();
+  }
+});
+
+[modalClose, modalCancel].forEach(el => {
+  el.addEventListener("click", closeModal);
+});
+
+// Handle form submit
+demoForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = document.getElementById("demoEmail").value.trim();
+
+  if (!email) {
+    alert("⚠️ Please enter your email before sending!");
+    return;
+  }
+
+  alert("✅ Thank you! Your demo request has been submitted.");
+  demoForm.reset();
+  closeModal();
 });

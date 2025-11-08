@@ -3,81 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PSRComputers - Home</title>
-   <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-   <link rel="stylesheet" href="contactus.css" />
+  <title>P.S.R.Computers - Home</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main stylesheet -->
+   
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="contactus.css" />
+    
 </head>
-<body>
 
-<!-- Navigation Bar -->
-<header>
-  <div class="nav-blur">
-    <div class="container nav-flex">
-      <div class="brand">
-        <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
-        <span class="company-name">PSRComputers</span>
-      </div>
+<body class="luxury-mode">
 
-      <nav>
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav-blur">
+      <div class="container nav-flex">
+        <div class="brand">
+          <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
+          <span class="company-name">P.S.R.Computers</span>
+        </div>
+
         <ul class="nav-links" id="navbar-links">
-          <li><a href="index.html">Home</a></li>
+  <li><a href="index.html">Home</a></li>
 
-          <!-- PRODUCT DROPDOWN -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">
-              Product <i class="fas fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="exam.html">Exam Tracking</a></li>
-              <li><a href="fee.html">Fee Tracking</a></li>
-              <li><a href="library.html">Library</a></li>
-              <li><a href="paysoft.html">Paysoft</a></li>
-              <li><a href="contax.html">Contax</a></li>
+  <!-- ✅ Single List Product Dropdown -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      Product <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+    </a>
+    <ul class="dropdown-menu" aria-label="Product submenu">
+      <li><a href="paysoft.html">Payroll Management</a></li>
+      <li><a href="contax.html">TDS Management (26Q & 24Q)</a></li>
+      <li><a href="exam.html">Exam Management</a></li>
+      <li><a href="fee.html">Fee Management</a></li>
+      <li><a href="library.html">Library Management</a></li>
+      <li><a href="leavesoft.html">Leave Management</a></li>
+      <li><a href="stusoft.html">Student Management</a></li>
+      <li><a href="inventory.html">Inventory Management</a></li>
+    </ul>
+  </li>
 
-              <!-- NESTED DROPDOWN -->
-              <li class="dropdown-sub">
-                <a href="#" class="dropdown-sub-toggle">
-                  Development ><i class="fas fa-caret-right sub-icon"></i>
-                </a>
-                <ul class="dropdown-submenu">
-                  <li><a href="leavesoft.html">Leavesoft</a></li>
-                  <li><a href="stusoft.html">Stusoft</a></li>
-                  <li><a href="inventory.html">Inventory</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+  <!-- ✅ About Dropdown (Restored) -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      About <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+    </a>
+    <ul class="dropdown-menu" aria-label="About submenu">
+      <li><a href="company.html">Company</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+    </ul>
+  </li>
 
-          <!-- ABOUT -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">
-              About <i class="fas fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="why-us.html">Why Us</a></li>
-            </ul>
-          </li>
+  <!-- Other standard links -->
+  <li><a href="pricing.html">Pricing</a></li>
+  <li><a href="contactus.html">ContactUs</a></li>
+  <li><a href="news.html">News</a></li>
+</ul>
 
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contactus.html">ContactUs</a></li>
-          <li><a href="news.html">News</a></li>
-        </ul>
-      </nav>
 
-      <!-- Hamburger for mobile -->
-      <button class="hamburger" id="hamburger">&#9776;</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="navbar-links" aria-expanded="false">
+          &#9776;
+        </button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- Overlay -->
-<div class="menu-overlay" id="menuOverlay"></div>
-
+  <div class="menu-overlay" id="menuOverlay" tabindex="-1" aria-hidden="true"></div>
   <!-- Contact Section -->
   <section class="contact-section">
     <div class="container">
@@ -140,98 +134,102 @@
   </div>
 </section>
 
- <!-- WhatsApp Floating Button -->
-<div class="whatsapp-float-btn">
-  <a href="https://wa.me/918448663060" target="_blank" aria-label="Chat on WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
-  </a>
-</div>
-
-<!-- FOOTER -->
-<footer class="main-footer">
-  <div class="footer-top-glow"></div>
-  <div class="footer-content">
-    <!-- Logo & Address -->
-    <div class="footer-col logo-address">
-      <div class="footer-brand">
-        <img src="images/logo.png" alt="PSR Computers Logo" class="footer-logo" />
-        <span class="footer-company-name">PSRComputers</span>
-      </div>
-
-      <address>
-        <h4>Office Address</h4>
-        Plot no. 165, First Floor,<br />
-        Pocket 1, Rohini Sector 25,<br />
-        Delhi 110085
-      </address>
-
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
-        target="_blank"
-        class="map-link"
-      >
-        📍 View on Map
-      </a>
-    </div>
-
-    <!-- Services -->
-    <div class="footer-col footer-services">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#">Web Development</a></li>
-        <li><a href="#">Payroll Automation</a></li>
-        <li><a href="#">API Integration</a></li>
-        <li><a href="#">IT Consulting</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact -->
-    <div class="footer-col contact">
-      <h4>Contact</h4>
-      <div class="contact-info">
-        <div>
-          <strong>Email:</strong><br />
-          <a href="mailto:psrcomputers@gmail.com">psrcomputers@gmail.com</a><br />
-          <a href="mailto:sudeep.palimar@psrcomputers.com">sudeep.palimar@psrcomputers.com</a><br />
-          <a href="mailto:shubhadeepa.s@gmail.com">shubhadeepa.s@gmail.com</a>
-        </div>
-        <div>
-          <strong>Phone:</strong><br />
-          <a href="tel:+918448663060">+91 8448663060</a><br />
-          <a href="tel:+919811250222">+91 9811250222</a>
-        </div>
-      </div>
-
-      <div class="footer-social">
-        <a href="https://linkedin.com" class="icon linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://instagram.com" class="icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com" class="icon facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com" class="icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/918448663060" class="icon whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-
-    <!-- Map -->
-    <div class="footer-col map-embed">
-      <h4>Location Map</h4>
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
-        target="_blank"
-      >
-        <img src="images/map.png" alt="Map Preview" class="map-preview" />
-      </a>
-    </div>
+  <!-- WhatsApp Floating Button -->
+  <div class="whatsapp-float-btn" aria-hidden="false">
+    <a href="https://wa.me/919811250222" target="_blank" aria-label="Chat on WhatsApp" rel="noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
+    </a>
   </div>
 
-  <div class="footer-divider"></div>
+  <!-- FOOTER -->
+  <footer class="main-footer" role="contentinfo">
+    <div class="footer-top-glow" aria-hidden="true"></div>
 
-  <div class="footer-copyright">
-    © <span id="year"></span> PSR Computers. All Rights Reserved.
-  </div>
-</footer>
+    <div class="footer-content">
+      <!-- Logo & Address -->
+      <div class="footer-col logo-address">
+        <div class="footer-brand">
+          <img src="images/logore.png" alt="PSR Computers Logo" class="footer-logo" />
+          <span class="footer-company-name">P.S.R.Computers</span>
+        </div>
 
+        <address>
+          <h4>Office Address</h4>
+          Plot no. 165, First Floor,<br />
+          Pocket 1, Rohini Sector 25,<br />
+          Delhi 110085
+        </address>
 
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
+          target="_blank"
+          class="map-link"
+          rel="noreferrer"
+          >📍 View on Map</a
+        >
+      </div>
 
-  <script src="comapny.js"></script>
+      <!-- Services -->
+      <div class="footer-col footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Payroll Automation</a></li>
+          <li><a href="#">API Integration</a></li>
+          <li><a href="#">IT Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <div class="contact-info">
+          <div>
+            <strong>Email:</strong><br />
+            <a href="mailto:psrcomputers@gmail.com">psrcomputers@gmail.com</a><br />
+            <a href="mailto:sudeep.palimar@psrcomputers.com">sudeep.palimar@psrcomputers.com</a><br />
+           
+          </div>
+          <div style="margin-top:12px;">
+            <strong>Phone:</strong><br />
+            <a href="tel:+919811250222">+91 9811250222</a>
+          </div>
+        </div>
+
+        <div class="footer-social" aria-label="Social links">
+          <a href="https://linkedin.com" class="icon linkedin" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://instagram.com" class="icon instagram" target="_blank" rel="noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://facebook.com" class="icon facebook" target="_blank" rel="noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://twitter.com" class="icon twitter" target="_blank" rel="noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://wa.me/918448663060" class="icon whatsapp" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="footer-col map-embed">
+        <h4>Location Map</h4>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="images/map.png" alt="Map Preview" class="map-preview" />
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-divider" aria-hidden="true"></div>
+
+    <div class="footer-copyright">
+      © <span id="year" aria-hidden="false"></span> P.S.R.Computers. All Rights Reserved.
+    </div>
+  </footer>
+
+  
+
+  <!-- Main script (will be replaced/optimized next) -->
+  <script src="script.js"></script>
+ 
+
 </body>
 </html>

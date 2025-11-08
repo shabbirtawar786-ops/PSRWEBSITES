@@ -67,11 +67,11 @@ document.getElementById('emailForm')?.addEventListener('submit', e => {
   statusDiv.innerText = 'Sending...';
 
   // Replace with actual EmailJS credentials when ready
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+  emailjs.send('service_abppf7b', 'template_sgy0vac', {
       from_email: email,
       message,
       to_email: 'shabbirtawar786@gmail.com'
-    }, 'YOUR_PUBLIC_KEY')
+    }, 'bXeUZEr67aNH06I_g')
     .then(() => {
       statusDiv.innerText = 'Message sent successfully!';
       e.target.reset();
@@ -247,17 +247,24 @@ window.addEventListener("scroll", () => {
 });
 
 
-// FADE-IN FOR SECTION DIVIDERS
-const dividers = document.querySelectorAll(".section-divider");
+// === Fade In on Scroll ===
+const trustedSection = document.querySelector(".trusted-section");
 window.addEventListener("scroll", () => {
-  dividers.forEach(div => {
-    const rect = div.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      div.style.opacity = "1";
-      div.style.transform = "translateY(0)";
-    } else {
-      div.style.opacity = "0";
-      div.style.transform = "translateY(40px)";
-    }
+  if (!trustedSection) return;
+  const rect = trustedSection.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.85) {
+    trustedSection.classList.add("visible");
+  }
+});
+
+// === Pause scroll on hover (both sliders) ===
+document.querySelectorAll(".brand-track").forEach(track => {
+  track.addEventListener("mouseenter", () => {
+    track.style.animationPlayState = "paused";
+  });
+  track.addEventListener("mouseleave", () => {
+    track.style.animationPlayState = "running";
   });
 });
+
+

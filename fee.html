@@ -3,81 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Exam Tracking - PSRComputers</title>
-   <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <title>P.S.R.Computers - Home</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main stylesheet -->
+   
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="product-style.css" />
+  
+  
 </head>
-<body>
+
+<body class="luxury-mode">
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav-blur">
+      <div class="container nav-flex">
+        <div class="brand">
+          <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
+          <span class="company-name">P.S.R.Computers</span>
+        </div>
+
+        <nav aria-label="Primary">
+          <ul class="nav-links" id="navbar-links">
+  <li><a href="index.html">Home</a></li>
+
+  <!-- ✅ Single List Product Dropdown -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      Product <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+    </a>
+    <ul class="dropdown-menu" aria-label="Product submenu">
+      <li><a href="paysoft.html">Payroll Management</a></li>
+      <li><a href="contax.html">TDS Management (26Q & 24Q)</a></li>
+      <li><a href="exam.html">Exam Management</a></li>
+      <li><a href="fee.html">Fee Management</a></li>
+      <li><a href="library.html">Library Management</a></li>
+      <li><a href="leavesoft.html">Leave Management</a></li>
+      <li><a href="stusoft.html">Student Management</a></li>
+      <li><a href="inventory.html">Inventory Management</a></li>
+    </ul>
+  </li>
+
+  <!-- ✅ About Dropdown (Restored) -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      About <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+    </a>
+    <ul class="dropdown-menu" aria-label="About submenu">
+      <li><a href="company.html">Company</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+    </ul>
+  </li>
+
+  <!-- Other standard links -->
+  <li><a href="pricing.html">Pricing</a></li>
+  <li><a href="contactus.html">ContactUs</a></li>
+  <li><a href="news.html">News</a></li>
+</ul>
 
 
-  <!-- Navigation Bar -->
-<header>
-  <div class="nav-blur">
-    <div class="container nav-flex">
-      <div class="brand">
-        <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
-        <span class="company-name">PSRComputers</span>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="navbar-links" aria-expanded="false">
+          &#9776;
+        </button>
       </div>
-
-      <nav>
-        <ul class="nav-links" id="navbar-links">
-          <li><a href="index.html">Home</a></li>
-
-          <!-- PRODUCT DROPDOWN -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">
-              Product <i class="fas fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="exam.html">Exam Tracking</a></li>
-              <li><a href="fee.html">Fee Tracking</a></li>
-              <li><a href="library.html">Library</a></li>
-              <li><a href="paysoft.html">Paysoft</a></li>
-              <li><a href="contax.html">Contax</a></li>
-
-              <!-- NESTED DROPDOWN -->
-              <li class="dropdown-sub">
-                <a href="#" class="dropdown-sub-toggle">
-                  Development <i class="fas fa-caret-right sub-icon"></i>
-                </a>
-                <ul class="dropdown-submenu">
-                  <li><a href="leavesoft.html">Leavesoft</a></li>
-                  <li><a href="stusoft.html">Stusoft</a></li>
-                  <li><a href="inventory.html">Inventory</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          <!-- ABOUT -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">
-              About <i class="fas fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="why-us.html">Why Us</a></li>
-            </ul>
-          </li>
-
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contactus.html">ContactUs</a></li>
-          <li><a href="news.html">News</a></li>
-        </ul>
-      </nav>
-
-      <!-- Hamburger for mobile -->
-      <button class="hamburger" id="hamburger">&#9776;</button>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- Overlay -->
-<div class="menu-overlay" id="menuOverlay"></div>
+  <div class="menu-overlay" id="menuOverlay" tabindex="-1" aria-hidden="true"></div>
 
 <!-- content  -->
   <div id="paysoftPageContent">
@@ -163,59 +159,62 @@
 <section class="cta" id="contact">
   <div class="cta-box">
     <h2>“Power Up Your Collections with FeeSoft”</h2>
-    <p>FeeSoft brings together precision, control, and simplicity—empowering schools and colleges with a reliable way to manage fee records, compliance reports, and student payment data all in one secure system.
-       It’s not just a fee collection tool—it’s your institution’s financial partner in efficiency and transparency.</p>
+    <p>
+      FeeSoft brings together precision, control, and simplicity—empowering schools and colleges with a reliable way to manage fee records, compliance reports, and student payment data all in one secure system.
+       It’s not just a fee collection tool—it’s your institution’s financial partner in efficiency and transparency.
+    </p>
     <div class="cta-buttons">
-      <button class="cta-btn primary" id="requestDemoBtnBottom">Request Demo</button>
-      <a href="#features" class="cta-btn secondary">See Features</a>
+      <button class="cta-btn primary" id="requestDemoBtn">Get a Demo</button>
+      <button class="cta-btn secondary" id="requestDemoBtnBottom">Request Demo</button>
     </div>
   </div>
 </section>
 
-
-
-<!-- Lightbox (fullscreen) -->
-<div class="lightbox" id="lightbox" role="dialog" aria-hidden="true" aria-label="Image viewer">
-  <div class="overlay" id="lbOverlay"></div>
-  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image" title="Previous">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
-  <div class="panel" id="lbPanel">
-    <img src="" alt="Fullscreen image" id="lbImage">
-  </div>
-  <button class="lb-btn lb-next" id="lbNext" aria-label="Next image" title="Next">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
-  <button class="lb-close" id="lbClose" aria-label="Close viewer" title="Close">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
-</div>
-
-<!-- Demo Modal (contact form) -->
-<div class="modal" id="demoModal" role="dialog" aria-hidden="true" aria-labelledby="demoTitle">
+<!-- Demo Modal -->
+<div class="modal" id="demoModal">
   <div class="backdrop" id="modalBackdrop"></div>
-  <div class="modal-box" role="document" aria-modal="true">
-    <div class="close-x" id="modalClose" title="Close">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-        <path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
+  <div class="modal-box">
+    <button class="close-x" id="modalClose">&times;</button>
 
-    <h3 id="demoTitle">Request a Demo</h3>
-    <p>Enter your email and a brief message — our team will contact you shortly to schedule your personalized demo.</p>
+    <h3 class="modal-title">Request a Demo</h3>
+    <p class="modal-subtitle">
+      Enter your email and a brief message — our team will reach out shortly to schedule your personalized demo.
+    </p>
 
-    <label for="demoEmail">Email</label>
-    <input type="email" id="demoEmail" placeholder="you@company.com" required />
+    <form id="demoForm">
+      <div class="input-group">
+        <label for="demoEmail">Email</label>
+        <input type="email" id="demoEmail" placeholder="you@company.com" required />
+      </div>
 
-    <label for="demoMessage">Message</label>
-    <textarea id="demoMessage" placeholder="Tell us about your requirements..."></textarea>
+      <div class="input-group">
+        <label for="demoMessage">Message</label>
+        <textarea id="demoMessage" placeholder="Tell us about your requirements..."></textarea>
+      </div>
 
-    <div class="modal-actions">
-      <button class="btn cancel" id="modalCancel">Cancel</button>
-      <button class="btn send" id="modalSend">Send Request</button>
-    </div>
+      <div class="modal-actions">
+        <button type="button" class="btn cancel" id="modalCancel">Cancel</button>
+        <button type="submit" class="btn send" id="modalSend">Send Request</button>
+      </div>
+    </form>
   </div>
 </div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="overlay" id="lbOverlay"></div>
+  
+  <div class="lb-container">
+    <button class="lb-btn lb-prev" id="lbPrev">‹</button>
+    <div class="panel">
+      <img id="lbImage" src="" alt="Zoomed Image">
+    </div>
+    <button class="lb-btn lb-next" id="lbNext">›</button>
+  </div>
+
+  <button class="lb-close" id="lbClose">×</button>
+</div>
+
 
 
    <!-- WhatsApp Floating Button -->
@@ -271,11 +270,11 @@
           <strong>Email:</strong><br />
           <a href="mailto:psrcomputers@gmail.com">psrcomputers@gmail.com</a><br />
           <a href="mailto:sudeep.palimar@psrcomputers.com">sudeep.palimar@psrcomputers.com</a><br />
-          <a href="mailto:shubhadeepa.s@gmail.com">shubhadeepa.s@gmail.com</a>
+          
         </div>
         <div>
           <strong>Phone:</strong><br />
-          <a href="tel:+918448663060">+91 8448663060</a><br />
+         
           <a href="tel:+919811250222">+91 9811250222</a>
         </div>
       </div>
@@ -304,10 +303,11 @@
   <div class="footer-divider"></div>
 
   <div class="footer-copyright">
-    © <span id="year"></span> PSR Computers. All Rights Reserved.
+    © <span id="year"></span> P.S.R.Computers. All Rights Reserved.
   </div>
 </footer> 
  
-  <script src="product.js"></script>
+  
+ <script src="product.js"></script>
 </body>
 </html>

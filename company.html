@@ -2,267 +2,282 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | PSR Computers</title>
-   <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>P.S.R.Computers - Home</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="company.css" />
   <link rel="stylesheet" href="style.css" />
-  </head>
-<body>
+</head>
 
+<body class="luxury-mode">
 
-  <!-- Navigation Bar -->
-<header>
-  <div class="nav-blur">
-    <div class="container nav-flex">
-      <div class="brand">
-        <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
-        <span class="company-name">PSRComputers</span>
-      </div>
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav-blur">
+      <div class="container nav-flex">
+        <div class="brand">
+          <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
+          <span class="company-name">P.S.R.Computers</span>
+        </div>
 
-      <nav>
         <ul class="nav-links" id="navbar-links">
-          <li><a href="index.html">Home</a></li>
+  <li><a href="index.html">Home</a></li>
 
-          <!-- PRODUCT DROPDOWN -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">
-              Product <i class="fas fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="exam.html">Exam Tracking</a></li>
-              <li><a href="fee.html">Fee Tracking</a></li>
-              <li><a href="library.html">Library</a></li>
-              <li><a href="paysoft.html">Paysoft</a></li>
-              <li><a href="contax.html">Contax</a></li>
+  <!-- ✅ Single List Product Dropdown -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      Product <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+    </a>
+    <ul class="dropdown-menu" aria-label="Product submenu">
+      <li><a href="paysoft.html">Payroll Management</a></li>
+      <li><a href="contax.html">TDS Management (26Q & 24Q)</a></li>
+      <li><a href="exam.html">Exam Management</a></li>
+      <li><a href="fee.html">Fee Management</a></li>
+      <li><a href="library.html">Library Management</a></li>
+      <li><a href="leavesoft.html">Leave Management</a></li>
+      <li><a href="stusoft.html">Student Management</a></li>
+      <li><a href="inventory.html">Inventory Management</a></li>
+    </ul>
+  </li>
 
-              <!-- NESTED DROPDOWN -->
-              <li class="dropdown-sub">
-                <a href="#" class="dropdown-sub-toggle">
-                  Development <i class="fas fa-caret-right sub-icon"></i>
-                </a>
-                <ul class="dropdown-submenu">
-                  <li><a href="leavesoft.html">Leavesoft</a></li>
-                  <li><a href="stusoft.html">Stusoft</a></li>
-                  <li><a href="inventory.html">Inventory</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+  <!-- ✅ About Dropdown (Restored) -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      About <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+    </a>
+    <ul class="dropdown-menu" aria-label="About submenu">
+      <li><a href="company.html">Company</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+    </ul>
+  </li>
 
-          <!-- ABOUT -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">
-              About <i class="fas fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="why-us.html">Why Us</a></li>
-            </ul>
-          </li>
+  <!-- Other standard links -->
+  <li><a href="pricing.html">Pricing</a></li>
+  <li><a href="contactus.html">ContactUs</a></li>
+  <li><a href="news.html">News</a></li>
+</ul>
 
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contactus.html">ContactUs</a></li>
-          <li><a href="news.html">News</a></li>
-        </ul>
-      </nav>
 
-      <!-- Hamburger for mobile -->
-      <button class="hamburger" id="hamburger">&#9776;</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="navbar-links" aria-expanded="false">
+          &#9776;
+        </button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- Overlay -->
-<div class="menu-overlay" id="menuOverlay"></div>
+  <div class="menu-overlay" id="menuOverlay" tabindex="-1" aria-hidden="true"></div>
 
   <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>About PSR Computers</h1>
-    <p>Empowering Education and Enterprises through Innovative Software Solutions since 1994.</p>
+<section class="hero">
+  <h1>About PSR Computers</h1>
+  <p>Empowering Education and Enterprises through Innovative Software Solutions since 1994.</p>
+</section>
+
+<!-- ABOUT CONTENT -->
+<div class="container">
+  <section class="section">
+    <p>
+      Founded in <strong>1994</strong> under the name <strong>P.S.R. Computers</strong>, our mission has been to bring Information Technology into educational institutions, companies, and firms by developing customized software solutions to automate their daily administrative and operational processes.
+    </p>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <div class="container">
-    <section class="section">
-      <p>
-        Founded in <strong>1994</strong> under the name <strong>P.S.R. Computers</strong>, our mission has been to bring Information Technology into educational institutions, companies, and firms by developing customized software solutions to automate their daily administrative and operational processes.
-      </p>
-    </section>
+  <hr class="line-separator" />
 
-    <hr class="line-separator" />
+  <section class="section">
+    <h2>Our Journey</h2>
+    <p>
+      Led by <strong>Mr. Sunil P.S.</strong> (Chief Executive), who has been part of the software industry since 1990, P.S.R. Computers began its journey after identifying a crucial gap in the availability of software for educational administration. This led to the creation of our flagship products — <strong>FeeSoft</strong> and <strong>PaySoft</strong> — marking the foundation of our legacy.
+    </p>
+    <p>
+      Over the years, we’ve introduced a suite of specialized software solutions, each tailored to meet the evolving needs of educational institutions and businesses. Explore them on our <a href="products.html">Products Page</a>.
+    </p>
+  </section>
 
-    <!-- HISTORY -->
-    <section class="section">
-      <h2>Our Journey</h2>
-      <p>
-        Led by <strong>Mr. Sunil P.S.</strong> (Chief Executive), who has been part of the software industry since 1990, P.S.R. Computers began its journey after identifying a crucial gap in the availability of software for educational administration. This led to the creation of our flagship products — <strong>FeeSoft</strong> for student fee management and <strong>PaySoft</strong> for payroll automation — marking the foundation of our legacy.
-      </p>
-      <p>
-        Over the years, we’ve introduced a suite of specialized software solutions, each tailored to meet the evolving needs of educational institutions and businesses. Explore them on our <a href="products.html" style="color:#007bff; text-decoration:none; font-weight:500;">Products Page</a>.
-      </p>
-    </section>
+  <section class="section">
+    <h2>Expertise & Support</h2>
+    <p>
+      Our strength lies in our experienced professionals—many of whom have been with the company since its inception. Their deep industry knowledge drives the innovation and customization of every solution we deliver.
+    </p>
+    <p>
+      To enhance client experience, we provide <strong>technical support, service, and hands-on training</strong> directly from the developers who built the software—making us a true pioneer in educational and administrative automation.
+    </p>
+  </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section">
-      <h2>Expertise & Support</h2>
-      <p>
-        Our strength lies in our experienced professionals—many of whom have been with the company since its inception. Their deep industry knowledge drives the innovation and customization of every solution we deliver. 
-      </p>
-      <p>
-        To enhance client experience, we provide <strong>technical support, service, and hands-on training</strong> directly from the developers who built the software—making us a true pioneer in educational and administrative automation.
-      </p>
-    </section>
+  <section class="section">
+    <h2>Our Approach</h2>
+    <p>
+      P.S.R. Computers develops both general-purpose and customized software using the latest and most reliable tools. We follow strict standards to ensure that every application meets industry benchmarks for performance, security, and usability.
+    </p>
+    <p>
+      We believe that <strong>data belongs solely to the client</strong>. Hence, all software solutions are licensed for client-side storage, ensuring total privacy.
+    </p>
+  </section>
 
-    <!-- APPROACH -->
-    <section class="section">
-      <h2>Our Approach</h2>
-      <p>
-        P.S.R. Computers develops both general-purpose and customized software using the latest and most reliable development tools. We follow strict standards to ensure that every application meets industry benchmarks for performance, security, and usability.
-      </p>
-      <p>
-        We believe that <strong>data belongs solely to the client</strong>. Hence, all software solutions are licensed for client-side storage, ensuring total privacy. For those preferring cloud infrastructure, we collaborate with trusted hosting partners to meet their specific needs.
-      </p>
-    </section>
+  <hr class="line-separator" />
 
-    <hr class="line-separator" />
+ <section class="section">
+  <h2>Our Flagship Software Solutions</h2>
+  <div class="product-list">
+    <div class="product-card">
+      <h3>PaySoft</h3>
+      <p>Staff Payroll Maintenance — compliant with Vth & VIth Pay Commission modules.</p>
+      <a href="paysoft.html" class="read-more-btn">Read More</a>
+    </div>
 
-    <!-- PRODUCT SHOWCASE -->
-    <section class="section">
-      <h2>Our Flagship Software Solutions</h2>
-      <div class="product-list">
-        <div class="product-card">
-          <h3>PaySoft</h3>
-          <p>Staff Payroll Maintenance — compliant with Vth & VIth Pay Commission modules.</p>
-        </div>
-        <div class="product-card">
-          <h3>FeeSoft</h3>
-          <p>School Fee Maintenance & Student Record Management.</p>
-        </div>
-        <div class="product-card">
-          <h3>LibSoft</h3>
-          <p>Library Automation Software with Barcode-Based Tracking.</p>
-        </div>
-        <div class="product-card">
-          <h3>ExamSoft</h3>
-          <p>Exam & Result Tracking as per DOE and CCE Guidelines.</p>
-        </div>
-        <div class="product-card">
-          <h3>ConTax</h3>
-          <p>TDS & Tax Management Software for Contractors and Professionals.</p>
-        </div>
-        <div class="product-card">
-          <h3>LevSoft</h3>
-          <p>Comprehensive Staff Leave Management & Reporting System.</p>
-        </div>
-        <div class="product-card">
-          <h3>StuSoft</h3>
-          <p>Student Information & Profile Management Software.</p>
-        </div>
-      </div>
-    </section>
+    <div class="product-card">
+      <h3>FeeSoft</h3>
+      <p>School Fee Maintenance & Student Record Management.</p>
+      <a href="fee.html" class="read-more-btn">Read More</a>
+    </div>
 
-    <section class="section">
-      <p>
-        At <strong>P.S.R. Computers</strong>, our vision remains clear — to provide intelligent, secure, and adaptable software solutions that simplify operations, empower people, and enhance institutional efficiency.
-      </p>
-    </section>
+    <div class="product-card">
+      <h3>LibSoft</h3>
+      <p>Library Automation Software with Barcode-Based Tracking.</p>
+      <a href="library.html" class="read-more-btn">Read More</a>
+    </div>
+
+    <div class="product-card">
+      <h3>ExamSoft</h3>
+      <p>Exam & Result Tracking as per DOE and CCE Guidelines.</p>
+      <a href="exam.html" class="read-more-btn">Read More</a>
+    </div>
+
+    <div class="product-card">
+      <h3>ConTax</h3>
+      <p>TDS & Tax Management Software for Contractors and Professionals.</p>
+      <a href="contax.html" class="read-more-btn">Read More</a>
+    </div>
+
+    <div class="product-card">
+      <h3>LevSoft</h3>
+      <p>Comprehensive Staff Leave Management & Reporting System.</p>
+      <a href="leavesoft.html" class="read-more-btn">Read More</a>
+    </div>
+
+    <div class="product-card">
+      <h3>StuSoft</h3>
+      <p>Student Information & Profile Management Software.</p>
+      <a href="stusoft.html" class="read-more-btn">Read More</a>
+    </div>
+
+     <div class="product-card">
+      <h3>ExamSoft</h3>
+      <p>Exam & Result Tracking as per DOE and CCE Guidelines.</p>
+      <a href="examsoft.html" class="read-more-btn">Read More</a>
+    </div>
   </div>
+
+     
+
+</section>
+
+
+  <section class="section">
+    <p>
+      At <strong>P.S.R. Computers</strong>, our vision remains clear — to provide intelligent, secure, and adaptable software solutions that simplify operations, empower people, and enhance institutional efficiency.
+    </p>
+  </section>
+</div>
 
 
   
  <!-- WhatsApp Floating Button -->
-<div class="whatsapp-float-btn">
-  <a href="https://wa.me/918448663060" target="_blank" aria-label="Chat on WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
-  </a>
-</div>
-
-<!-- FOOTER -->
-<footer class="main-footer">
-  <div class="footer-top-glow"></div>
-  <div class="footer-content">
-    <!-- Logo & Address -->
-    <div class="footer-col logo-address">
-      <div class="footer-brand">
-        <img src="images/logo.png" alt="PSR Computers Logo" class="footer-logo" />
-        <span class="footer-company-name">PSRComputers</span>
-      </div>
-
-      <address>
-        <h4>Office Address</h4>
-        Plot no. 165, First Floor,<br />
-        Pocket 1, Rohini Sector 25,<br />
-        Delhi 110085
-      </address>
-
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
-        target="_blank"
-        class="map-link"
-      >
-        📍 View on Map
-      </a>
-    </div>
-
-    <!-- Services -->
-    <div class="footer-col footer-services">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#">Web Development</a></li>
-        <li><a href="#">Payroll Automation</a></li>
-        <li><a href="#">API Integration</a></li>
-        <li><a href="#">IT Consulting</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact -->
-    <div class="footer-col contact">
-      <h4>Contact</h4>
-      <div class="contact-info">
-        <div>
-          <strong>Email:</strong><br />
-          <a href="mailto:psrcomputers@gmail.com">psrcomputers@gmail.com</a><br />
-          <a href="mailto:sudeep.palimar@psrcomputers.com">sudeep.palimar@psrcomputers.com</a><br />
-          <a href="mailto:shubhadeepa.s@gmail.com">shubhadeepa.s@gmail.com</a>
-        </div>
-        <div>
-          <strong>Phone:</strong><br />
-          <a href="tel:+918448663060">+91 8448663060</a><br />
-          <a href="tel:+919811250222">+91 9811250222</a>
-        </div>
-      </div>
-
-      <div class="footer-social">
-        <a href="https://linkedin.com" class="icon linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://instagram.com" class="icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com" class="icon facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com" class="icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/918448663060" class="icon whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-
-    <!-- Map -->
-    <div class="footer-col map-embed">
-      <h4>Location Map</h4>
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
-        target="_blank"
-      >
-        <img src="images/map.png" alt="Map Preview" class="map-preview" />
-      </a>
-    </div>
+  <div class="whatsapp-float-btn" aria-hidden="false">
+    <a href="https://wa.me/919811250222" target="_blank" aria-label="Chat on WhatsApp" rel="noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
+    </a>
   </div>
 
-  <div class="footer-divider"></div>
+  <!-- FOOTER -->
+  <footer class="main-footer" role="contentinfo">
+    <div class="footer-top-glow" aria-hidden="true"></div>
 
-  <div class="footer-copyright">
-    © <span id="year"></span> PSR Computers. All Rights Reserved.
-  </div>
-</footer>
-<script src="comapny.js"></script>
+    <div class="footer-content">
+      <!-- Logo & Address -->
+      <div class="footer-col logo-address">
+        <div class="footer-brand">
+          <img src="images/logore.png" alt="PSR Computers Logo" class="footer-logo" />
+          <span class="footer-company-name">P.S.R.Computers</span>
+        </div>
+
+        <address>
+          <h4>Office Address</h4>
+          Plot no. 165, First Floor,<br />
+          Pocket 1, Rohini Sector 25,<br />
+          Delhi 110085
+        </address>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
+          target="_blank"
+          class="map-link"
+          rel="noreferrer"
+          >📍 View on Map</a
+        >
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Payroll Automation</a></li>
+          <li><a href="#">API Integration</a></li>
+          <li><a href="#">IT Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <div class="contact-info">
+          <div>
+            <strong>Email:</strong><br />
+            <a href="mailto:psrcomputers@gmail.com">psrcomputers@gmail.com</a><br />
+            <a href="mailto:sudeep.palimar@psrcomputers.com">sudeep.palimar@psrcomputers.com</a><br />
+           
+          </div>
+          <div style="margin-top:12px;">
+            <strong>Phone:</strong><br />
+            <a href="tel:+919811250222">+91 9811250222</a>
+          </div>
+        </div>
+
+        <div class="footer-social" aria-label="Social links">
+          <a href="https://linkedin.com" class="icon linkedin" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://instagram.com" class="icon instagram" target="_blank" rel="noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://facebook.com" class="icon facebook" target="_blank" rel="noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://twitter.com" class="icon twitter" target="_blank" rel="noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://wa.me/918448663060" class="icon whatsapp" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="footer-col map-embed">
+        <h4>Location Map</h4>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="images/map.png" alt="Map Preview" class="map-preview" />
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-divider" aria-hidden="true"></div>
+
+    <div class="footer-copyright">
+      © <span id="year" aria-hidden="false"></span> P.S.R.Computers. All Rights Reserved.
+    </div>
+  </footer>
+
+  
+  <!-- Main script (will be replaced/optimized next) -->
+  <script src="script.js"></script>
 </body>
 </html>

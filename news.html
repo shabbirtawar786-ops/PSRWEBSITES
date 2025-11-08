@@ -1,226 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-     />
-     <link rel="stylesheet" href="news.css" />
-     <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>P.S.R.Computers - Home</title>
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="news.css" />
 </head>
-<body>
-    <!-- nav bar -->
-<header>
-  <div class="nav-blur">
-    <div class="container nav-flex">
-      <div class="brand">
-        <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
-        <span class="company-name">PSRComputers</span>
+
+<body class="luxury-mode">
+
+  <body class="luxury-mode">
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav-blur">
+      <div class="container nav-flex">
+        <div class="brand">
+          <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
+          <span class="company-name">P.S.R.Computers</span>
+        </div>
+
+        <ul class="nav-links" id="navbar-links">
+  <li><a href="index.html">Home</a></li>
+
+  <!-- ✅ Single List Product Dropdown -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      Product <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+    </a>
+    <ul class="dropdown-menu" aria-label="Product submenu">
+      <li><a href="paysoft.html">Payroll Management</a></li>
+      <li><a href="contax.html">TDS Management (26Q & 24Q)</a></li>
+      <li><a href="exam.html">Exam Management</a></li>
+      <li><a href="fee.html">Fee Management</a></li>
+      <li><a href="library.html">Library Management</a></li>
+      <li><a href="leavesoft.html">Leave Management</a></li>
+      <li><a href="stusoft.html">Student Management</a></li>
+      <li><a href="inventory.html">Inventory Management</a></li>
+    </ul>
+  </li>
+
+  <!-- ✅ About Dropdown (Restored) -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      About <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+    </a>
+    <ul class="dropdown-menu" aria-label="About submenu">
+      <li><a href="company.html">Company</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+    </ul>
+  </li>
+
+  <!-- Other standard links -->
+  <li><a href="pricing.html">Pricing</a></li>
+  <li><a href="contactus.html">ContactUs</a></li>
+  <li><a href="news.html">News</a></li>
+</ul>
+
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="navbar-links" aria-expanded="false">
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay" tabindex="-1" aria-hidden="true"></div>
+
+
+
+  <!-- ======= HERO SECTION ======= -->
+  <section class="news-hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Latest Education & Tax Updates</h1>
+        <p>Get verified education, board exam, and taxation headlines — curated for schools, professionals, and institutions.</p>
+      </div>
+    </div>
+  </section>
+
+ 
+<!-- ======= TRENDING NOW STRIP (Dynamic) ======= -->
+<div class="trending-strip">
+  <span class="trending-title">Trending Now:</span>
+  <div class="trending-marquee" id="trending-container">
+    <p>Loading latest headlines…</p>
+  </div>
+</div>
+
+  <!-- ======= NEWS SECTION ======= -->
+  <section class="news-list">
+    <h2>Recent News Highlights</h2>
+
+    <div class="news-grid">
+
+      <div class="news-card">
+        <img src="https://static.toiimg.com/photo/msid-60869397/60869397.jpg" alt="CBSE Board">
+        <div class="news-info">
+          <h3>CBSE Class 10 Supplementary Result 2025 Announced</h3>
+          <p>CBSE released Class 10 Supplementary Exam Results—67,620 students passed. Re-evaluation window now open.</p>
+          <a href="https://timesofindia.indiatimes.com/topic/cbse-class-10/news" target="_blank" class="btn">Read More</a>
+        </div>
       </div>
 
-      <nav>
-        <ul class="nav-links" id="navbar-links">
-          <li><a href="index.html">Home</a></li>
+      <div class="news-card">
+        <img src="https://img.freepik.com/free-photo/business-meeting_1098-10592.jpg" alt="Income Tax News">
+        <div class="news-info">
+          <h3>Income Tax Audit, ITR Deadlines Extended</h3>
+          <p>The income tax return deadline for audit cases extended to December 10, 2025. Check latest CBDT circular.</p>
+          <a href="https://www.financialexpress.com/money/cbdt-extends-due-dates-for-tax-audit-and-itr-filing-check-new-deadlines-4025625/" target="_blank" class="btn">Read More</a>
+        </div>
+      </div>
 
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">
-              Product <i class="fas fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="exam.html">Exam Tracking</a></li>
-              <li><a href="fee.html">Fee Tracking</a></li>
-              <li><a href="library.html">Library</a></li>
-              <li><a href="paysoft.html">Paysoft</a></li>
-              <li><a href="contax.html">Contax</a></li>
+      <div class="news-card">
+        <img src="images/TDS.jpg" alt="TDS Update">
+        <div class="news-info">
+          <h3>TDS Latest Updates October 2025</h3>
+          <p>CBDT announces interest waivers and extends deadlines for TDS/TCS compliance. Read full details here.</p>
+          <a href="https://blog.saginfotech.com/income-tax-tds-latest-updates" target="_blank" class="btn">Read More</a>
+        </div>
+      </div>
 
-              <li class="dropdown-sub">
-                <a href="#" class="dropdown-sub-toggle">
-                  Development <i class="fas fa-caret-right sub-icon"></i>
-                </a>
-                <ul class="dropdown-submenu">
-                  <li><a href="leavesoft.html">Leavesoft</a></li>
-                  <li><a href="stusoft.html">Stusoft</a></li>
-                  <li><a href="inventory.html">Inventory</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+      <div class="news-card">
+        <img src="https://img.freepik.com/free-photo/back-view-schoolboy-using-computer-home_23-2147993714.jpg" alt="ICSE Results">
+        <div class="news-info">
+          <h3>ICSE/ISC Board Exam Results 2025 Declared</h3>
+          <p>ICSE and ISC Class 10, 12 results declared. Students can now apply for re-evaluation as per CISCE notice.</p>
+          <a href="https://www.ndtv.com/topic/icse" target="_blank" class="btn">Read More</a>
+        </div>
+      </div>
 
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">
-              About <i class="fas fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="why-us.html">Why Us</a></li>
-            </ul>
-          </li>
+      <div class="news-card">
+        <img src="https://cbse.gov.in/images/logo.png" alt="CBSE Official">
+        <div class="news-info">
+          <h3>CBSE Official 2026 Date Sheets Released</h3>
+          <p>CBSE has announced its latest exam date sheets and key policy reforms for academic year 2026.</p>
+          <a href="https://cbse.gov.in/cbsenew/cbse.html" target="_blank" class="btn">Read More</a>
+        </div>
+      </div>
 
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contactus.html">ContactUs</a></li>
-          <li><a href="news.html">News</a></li>
-        </ul>
-      </nav>
-
-      <button class="hamburger" id="hamburger">&#9776;</button>
-    </div>
+       <div class="news-card">
+       <img src="images/taxnew.png" alt="NRIs TDS">
+  <div class="news-info">
+    <h3>NRIs Can Now Claim TDS Exemption Online</h3>
+    <p>Non-resident Indians (NRIs) can now file online requests to claim TDS exemptions under new IT portal rules. The streamlined system simplifies compliance and reduces processing delays.</p>
+    <a href="http://www.thehindu.com/news/cities/bangalore/nris-can-now-claim-tds-exemption-online/article17428922.ece" 
+       target="_blank" 
+       class="btn">Read More</a>
   </div>
-</header>
+</div>
 
-<div class="menu-overlay" id="menuOverlay"></div>
 
-<!-- Main News Hero Section -->
-<section class="news-hero">
-  <div class="featured-news-card">
-    <img src="https://img.freepik.com/free-photo/modern-education-technology-concept-classroom-stock-image_31965-42951.jpg" alt="Featured CBSE News">
-    <h2>CBSE, ICSE & Tax Headlines</h2>
-    <p>Stay informed with verified education and tax updates curated for schools, students, and professionals.</p>
-  </div>
-</section>
-
-<!-- News Grid Section -->
-<section class="news-list">
-  <h3>Top Recent News</h3>
-  <div class="news-grid">
-    <div class="news-card">
-      <img src="https://static.toiimg.com/photo/msid-60869397/60869397.jpg" alt="CBSE Board">
-      <h4>CBSE Class 10 Supplementary Result 2025 Announced</h4>
-      <p>CBSE released Class 10 Supplementary Exam Results—67,620 passed. Verification and re-evaluation application windows now open.</p>
-      <a href="https://timesofindia.indiatimes.com/topic/cbse-class-10/news" target="_blank" class="btn">Read More</a>
     </div>
-
-    <div class="news-card">
-      <img src="https://img.freepik.com/free-photo/business-meeting_1098-10592.jpg" alt="Income Tax News">
-      <h4>Income Tax Audit, ITR Deadlines Extended</h4>
-      <p>The income tax return deadline for audit cases now extended to December 10, 2025. Audit report deadline moved to November 10, 2025, per latest CBDT notification.</p>
-      <a href="https://www.financialexpress.com/money/cbdt-extends-due-dates-for-tax-audit-and-itr-filing-check-new-deadlines-4025625/" target="_blank" class="btn">Read More</a>
-    </div>
-
-    <div class="news-card">
-      <img src="images/TDS.jpg" alt="TDS Update">
-      <h4>TDS Latest Updates October 2025</h4>
-      <p>CBDT announces amendments, extends key deadlines: Interest waiver on delayed TDS/TCS payments, offline utilities for ITR forms released.</p>
-      <a href="https://blog.saginfotech.com/income-tax-tds-latest-updates" target="_blank" class="btn">Read More</a>
-    </div>
-
-    <div class="news-card">
-      <img src="https://img.freepik.com/free-photo/back-view-schoolboy-using-computer-home_23-2147993714.jpg" alt="ICSE Results">
-      <h4>ICSE/ISC Results: Board Exam Updates</h4>
-      <p>ICSE and ISC Class 10, 12 board exam results for 2025 declared. Re-evaluation application window now open as per CISCE.</p>
-      <a href="https://www.ndtv.com/topic/icse" target="_blank" class="btn">Read More</a>
-    </div>
-
-    <div class="news-card">
-      <img src="https://cbse.gov.in/images/logo.png" alt="CBSE Official">
-      <h4>CBSE Official Updates: New Date Sheets</h4>
-      <p>CBSE releases latest board exam date sheets and resources for 2026. Updates on educational reforms and guidelines.</p>
-      <a href="https://cbse.gov.in/cbsenew/cbse.html" target="_blank" class="btn">Read More</a>
-    </div>
-  </div>
-
-  
-</section>
-
+  </section>
 
 
 
 <!-- WhatsApp Floating Button -->
-<div class="whatsapp-float-btn">
-  <a href="https://wa.me/918448663060" target="_blank" aria-label="Chat on WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
-  </a>
-</div>
-
-<!-- FOOTER -->
-<footer class="main-footer">
-  <div class="footer-top-glow"></div>
-  <div class="footer-content">
-    <!-- Logo & Address -->
-    <div class="footer-col logo-address">
-      <div class="footer-brand">
-        <img src="images/logo.png" alt="PSR Computers Logo" class="footer-logo" />
-        <span class="footer-company-name">PSRComputers</span>
-      </div>
-
-      <address>
-        <h4>Office Address</h4>
-        Plot no. 165, First Floor,<br />
-        Pocket 1, Rohini Sector 25,<br />
-        Delhi 110085
-      </address>
-
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
-        target="_blank"
-        class="map-link"
-      >
-        📍 View on Map
-      </a>
-    </div>
-
-    <!-- Services -->
-    <div class="footer-col footer-services">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#">Web Development</a></li>
-        <li><a href="#">Payroll Automation</a></li>
-        <li><a href="#">API Integration</a></li>
-        <li><a href="#">IT Consulting</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact -->
-    <div class="footer-col contact">
-      <h4>Contact</h4>
-      <div class="contact-info">
-        <div>
-          <strong>Email:</strong><br />
-          <a href="mailto:psrcomputers@gmail.com">psrcomputers@gmail.com</a><br />
-          <a href="mailto:sudeep.palimar@psrcomputers.com">sudeep.palimar@psrcomputers.com</a><br />
-          <a href="mailto:shubhadeepa.s@gmail.com">shubhadeepa.s@gmail.com</a>
-        </div>
-        <div>
-          <strong>Phone:</strong><br />
-          <a href="tel:+918448663060">+91 8448663060</a><br />
-          <a href="tel:+919811250222">+91 9811250222</a>
-        </div>
-      </div>
-
-      <div class="footer-social">
-        <a href="https://linkedin.com" class="icon linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://instagram.com" class="icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com" class="icon facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com" class="icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/918448663060" class="icon whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-
-    <!-- Map -->
-    <div class="footer-col map-embed">
-      <h4>Location Map</h4>
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
-        target="_blank"
-      >
-        <img src="images/map.png" alt="Map Preview" class="map-preview" />
-      </a>
-    </div>
+  <div class="whatsapp-float-btn" aria-hidden="false">
+    <a href="https://wa.me/919811250222" target="_blank" aria-label="Chat on WhatsApp" rel="noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
+    </a>
   </div>
 
-  <div class="footer-divider"></div>
+  <!-- FOOTER -->
+  <footer class="main-footer" role="contentinfo">
+    <div class="footer-top-glow" aria-hidden="true"></div>
 
-  <div class="footer-copyright">
-    © <span id="year"></span> PSR Computers. All Rights Reserved.
-  </div>
-</footer>
+    <div class="footer-content">
+      <!-- Logo & Address -->
+      <div class="footer-col logo-address">
+        <div class="footer-brand">
+          <img src="images/logore.png" alt="PSR Computers Logo" class="footer-logo" />
+          <span class="footer-company-name">P.S.R.Computers</span>
+        </div>
+
+        <address>
+          <h4>Office Address</h4>
+          Plot no. 165, First Floor,<br />
+          Pocket 1, Rohini Sector 25,<br />
+          Delhi 110085
+        </address>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
+          target="_blank"
+          class="map-link"
+          rel="noreferrer"
+          >📍 View on Map</a
+        >
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Payroll Automation</a></li>
+          <li><a href="#">API Integration</a></li>
+          <li><a href="#">IT Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <div class="contact-info">
+          <div>
+            <strong>Email:</strong><br />
+            <a href="mailto:psrcomputers@gmail.com">psrcomputers@gmail.com</a><br />
+            <a href="mailto:sudeep.palimar@psrcomputers.com">sudeep.palimar@psrcomputers.com</a><br />
+           
+          </div>
+          <div style="margin-top:12px;">
+            <strong>Phone:</strong><br />
+            <a href="tel:+919811250222">+91 9811250222</a>
+          </div>
+        </div>
+
+        <div class="footer-social" aria-label="Social links">
+          <a href="https://linkedin.com" class="icon linkedin" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://instagram.com" class="icon instagram" target="_blank" rel="noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://facebook.com" class="icon facebook" target="_blank" rel="noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://twitter.com" class="icon twitter" target="_blank" rel="noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://wa.me/918448663060" class="icon whatsapp" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="footer-col map-embed">
+        <h4>Location Map</h4>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Plot+no.+165,+First+Floor,+Pocket+1,+Rohini+Sector+25,+Delhi+110085"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="images/map.png" alt="Map Preview" class="map-preview" />
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-divider" aria-hidden="true"></div>
+
+    <div class="footer-copyright">
+      © <span id="year" aria-hidden="false"></span> P.S.R.Computers. All Rights Reserved.
+    </div>
+  </footer>
 
 
+     
+     
+
+  <!-- Main script (will be replaced/optimized next) -->
   <script src="script.js"></script>
   <script src="news.js"></script>
+  
+
 
 
 </body>
