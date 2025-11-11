@@ -1,9 +1,12 @@
 /* =====================================================
-   PSR COMPUTERS — script.js (optimized build)
-   Behavior: Hover dropdown desktop, click dropdown mobile
+   PSR COMPUTERS — script.js (Clean & Optimized Build)
+   Author: Shabbir
    ===================================================== */
 
-/* ---------- HERO SLIDER ---------- */
+
+/* =====================================================
+   1️⃣ HERO SLIDER
+   ===================================================== */
 const slides = document.querySelectorAll('.hero-slide');
 const sliderContainer = document.querySelector('.slider-container');
 const dotsContainer = document.querySelector('.dots');
@@ -44,6 +47,7 @@ function openLink(url) {
 // Initialize slider
 showSlide(0);
 let slideInterval = setInterval(nextSlide, 6000);
+
 const heroSlider = document.querySelector('.hero-slider');
 if (heroSlider) {
   heroSlider.addEventListener('mouseenter', () => clearInterval(slideInterval));
@@ -52,9 +56,13 @@ if (heroSlider) {
   });
 }
 
-/* ---------- EMAILJS FORM ---------- */
+
+/* =====================================================
+   2️⃣ EMAILJS CONTACT FORM
+   ===================================================== */
 document.getElementById('emailForm')?.addEventListener('submit', e => {
   e.preventDefault();
+
   const email = document.getElementById('userEmail').value.trim();
   const message = document.getElementById('message').value.trim();
   const statusDiv = document.getElementById('status');
@@ -66,7 +74,6 @@ document.getElementById('emailForm')?.addEventListener('submit', e => {
 
   statusDiv.innerText = 'Sending...';
 
-  // Replace with actual EmailJS credentials when ready
   emailjs.send('service_abppf7b', 'template_sgy0vac', {
       from_email: email,
       message,
@@ -81,14 +88,20 @@ document.getElementById('emailForm')?.addEventListener('submit', e => {
     });
 });
 
-/* ---------- SOCIAL BAR CLICK TRACKING ---------- */
-document.querySelectorAll('.social-bar a').forEach(a =>
-  a.addEventListener('click', () => {
-    // Optional analytics hook
-  })
-);
 
-/* ---------- COOKIE MODAL ---------- */
+/* =====================================================
+   3️⃣ SOCIAL BAR (Analytics Hook)
+   ===================================================== */
+document.querySelectorAll('.social-bar a').forEach(a => {
+  a.addEventListener('click', () => {
+    // Optional: track clicks (future use)
+  });
+});
+
+
+/* =====================================================
+   4️⃣ COOKIE CONSENT MODAL
+   ===================================================== */
 function setCookie(name, value, days) {
   const d = new Date();
   d.setTime(d.getTime() + days * 86400000);
@@ -96,7 +109,10 @@ function setCookie(name, value, days) {
 }
 function getCookie(name) {
   const cname = name + '=';
-  return document.cookie.split(';').map(c => c.trim()).find(c => c.startsWith(cname))?.substring(cname.length) || '';
+  return document.cookie.split(';')
+    .map(c => c.trim())
+    .find(c => c.startsWith(cname))
+    ?.substring(cname.length) || '';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -126,84 +142,107 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* ---------- BRAND SLIDER ---------- */
+
+/* =====================================================
+   5️⃣ BRAND SLIDER (Pause on Hover)
+   ===================================================== */
 const brandSlider = document.getElementById('brandSlider');
 if (brandSlider) {
   brandSlider.addEventListener('mouseover', () => brandSlider.style.animationPlayState = 'paused');
   brandSlider.addEventListener('mouseout', () => brandSlider.style.animationPlayState = 'running');
 }
 
-/* ---------- AUTO YEAR ---------- */
+
+/* =====================================================
+   6️⃣ AUTO YEAR IN FOOTER
+   ===================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const yearSpan = document.getElementById('year');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
 
-/* ---------- NAVBAR / DROPDOWN / OVERLAY ---------- */
+
+/* =====================================================
+   7️⃣ ABOUT SECTION SCROLL ANIMATIONS
+   ===================================================== */
+// Fade-in
+document.addEventListener('scroll', () => {
+  document.querySelectorAll('.about-us-section').forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 150) {
+      sec.classList.add('visible');
+    }
+  });
+});
+
+// Parallax background
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.about-us-section').forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      sec.classList.add('parallax-active');
+    } else {
+      sec.classList.remove('parallax-active');
+    }
+  });
+});
+
+
+/* =====================================================
+   8️⃣ TRUSTED SECTION FADE-IN
+   ===================================================== */
+const trustedSection = document.querySelector('.trusted-section');
+window.addEventListener('scroll', () => {
+  if (!trustedSection) return;
+  const rect = trustedSection.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.85) {
+    trustedSection.classList.add('visible');
+  }
+});
+
+
+/* =====================================================
+   9️⃣ NAVBAR & HAMBURGER MENU
+   ===================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
   const overlay = document.querySelector('.menu-overlay');
   const dropdownToggles = document.querySelectorAll('.dropdown > a');
-  const subDropdownToggles = document.querySelectorAll('.dropdown-sub-toggle');
+  const logo = document.querySelector('.logo');
+  const nav = document.querySelector('.nav-blur');
 
-  // Hamburger toggle
+  /* ----- Hamburger Toggle ----- */
   hamburger?.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
     overlay.classList.toggle('show', open);
     document.body.classList.toggle('no-scroll', open);
+    hamburger.classList.toggle('active', open);
     hamburger.setAttribute('aria-expanded', open);
   });
 
-  // Overlay close
+  /* ----- Overlay Click (Close Menu) ----- */
   overlay?.addEventListener('click', () => {
     navLinks.classList.remove('open');
     overlay.classList.remove('show');
     document.body.classList.remove('no-scroll');
+    hamburger?.classList.remove('active');
     hamburger?.setAttribute('aria-expanded', 'false');
   });
 
-  /* ------------------------------
-     Dropdown Toggle (Desktop + Mobile)
-     Keeps dropdown open when clicked
-  ------------------------------ */
+  /* ----- Dropdown Toggle (Mobile) ----- */
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', e => {
       const parent = toggle.parentElement;
       const icon = toggle.querySelector('.dropdown-icon');
       e.preventDefault();
-
-      // Toggle open/close
-      const isOpen = parent.classList.toggle('open');
-      if (icon) icon.classList.toggle('rotate', isOpen);
-
-      // Close all other dropdowns
-      document.querySelectorAll('.dropdown').forEach(other => {
-        if (other !== parent) {
-          other.classList.remove('open');
-          const otherIcon = other.querySelector('.dropdown-icon');
-          if (otherIcon) otherIcon.classList.remove('rotate');
-        }
-      });
-
-      // Stop propagation so outside click doesn’t close immediately
-      e.stopPropagation();
-    });
-  });
-
-  // Sub-dropdown toggle (Mobile + Desktop)
-  subDropdownToggles.forEach(subToggle => {
-    subToggle.addEventListener('click', e => {
-      const parent = subToggle.parentElement;
-      const icon = subToggle.querySelector('.sub-icon');
-      e.preventDefault();
       const isOpen = parent.classList.toggle('open');
       if (icon) icon.classList.toggle('rotate', isOpen);
       e.stopPropagation();
     });
   });
 
-  // Close dropdowns when clicking outside
+  /* ----- Close Dropdowns When Clicking Outside ----- */
   document.addEventListener('click', e => {
     if (!e.target.closest('.dropdown')) {
       document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
@@ -211,60 +250,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close mobile menu on resize
+  /* ----- Close Mobile Menu on Resize ----- */
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 700) {
+    if (window.innerWidth > 768) {
       navLinks.classList.remove('open');
       overlay.classList.remove('show');
       document.body.classList.remove('no-scroll');
+      hamburger?.classList.remove('active');
       hamburger?.setAttribute('aria-expanded', 'false');
     }
   });
-});
 
-// about section 
-
-document.addEventListener("scroll", () => {
-  document.querySelectorAll(".about-us-section").forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 150) {
-      sec.classList.add("visible");
+  /* ----- Scroll Dark Navbar + Logo Switch ----- */
+  let isDark = false;
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 80;
+    if (scrolled && !isDark) {
+      nav.classList.add('nav-dark');
+      logo.src = 'images/logore.png'; // white logo when scrolled
+      // ✅ Do NOT change hamburger color on scroll
+      isDark = true;
+    } else if (!scrolled && isDark) {
+      nav.classList.remove('nav-dark');
+      logo.src = 'images/logo.png'; // normal logo at top
+      // ✅ Hamburger stays same maroon always
+      isDark = false;
     }
   });
 });
 
-
-// PARALLAX BACKGROUND SCROLL EFFECT
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".about-us-section").forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      sec.classList.add("parallax-active");
-    } else {
-      sec.classList.remove("parallax-active");
-    }
-  });
-});
-
-
-// === Fade In on Scroll ===
-const trustedSection = document.querySelector(".trusted-section");
-window.addEventListener("scroll", () => {
-  if (!trustedSection) return;
-  const rect = trustedSection.getBoundingClientRect();
-  if (rect.top < window.innerHeight * 0.85) {
-    trustedSection.classList.add("visible");
-  }
-});
-
-// === Pause scroll on hover (both sliders) ===
-document.querySelectorAll(".brand-track").forEach(track => {
-  track.addEventListener("mouseenter", () => {
-    track.style.animationPlayState = "paused";
-  });
-  track.addEventListener("mouseleave", () => {
-    track.style.animationPlayState = "running";
-  });
-});
-
-
+console.log("✅ Navbar script is running!");
