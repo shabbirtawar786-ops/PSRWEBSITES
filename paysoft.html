@@ -5,19 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>P.S.R.Computers - Home</title>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="product-style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Main stylesheet -->
-   
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="product-style.css" />
-  
   </head>
 
 <body class="luxury-mode">
 
- <div id="navbar-container"></div>
+ <!-- NAVBAR -->
+<header>
+  <div class="nav-blur">
+    <div class="container nav-flex">
+      <div class="brand">
+        <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
+        <span class="company-name">P.S.R.Computers</span>
+      </div>
+
+      <ul class="nav-links" id="navbar-links">
+        <li><a href="index.html">Home</a></li>
+
+        <!-- Product Dropdown -->
+        <li class="dropdown">
+          <a href="#">Product <i class="fas fa-caret-down dropdown-icon"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="paysoft.html">Payroll Management</a></li>
+            <li><a href="contax.html">TDS Management (26Q & 24Q)</a></li>
+            <li><a href="exam.html">Exam Management</a></li>
+            <li><a href="fee.html">Fee Management</a></li>
+            <li><a href="library.html">Library Management</a></li>
+            <li><a href="leavesoft.html">Leave Management</a></li>
+            <li><a href="stusoft.html">Student Management</a></li>
+            <li><a href="inventory.html">Inventory Management</a></li>
+          </ul>
+        </li>
+
+        <!-- About Dropdown -->
+        <li class="dropdown">
+          <a href="#">About <i class="fas fa-caret-down dropdown-icon"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="company.html">Company</a></li>
+            <li><a href="why-us.html">Why Us</a></li>
+          </ul>
+        </li>
+
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contactus.html">ContactUs</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+<button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="navbar-links" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+    </div>
+  </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay" tabindex="-1" aria-hidden="true"></div>
+
 
 
 <!-- content  -->
@@ -256,8 +305,9 @@
  
 
  <script src="product.js"></script>
+
  
-<script src="navbar-loader.js"></script>
+
 
 </body>
 </html>

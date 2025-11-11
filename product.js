@@ -90,137 +90,87 @@ window.addEventListener("load", () => {
 });
 
 
-// ===============================
-// NAVBAR FUNCTIONALITY
-// ===============================
-const hamburger2 = document.getElementById("navbar-hamburger");
-const navLinks2 = document.getElementById("navbar-links");
-const overlay2 = document.getElementById("menu-overlay");
-const dropdownToggles2 = document.querySelectorAll(".dropdown-toggle");
-const body2 = document.body;
+/* =====================================================
+   9️⃣ NAVBAR & HAMBURGER MENU
+   ===================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const overlay = document.querySelector('.menu-overlay');
+  const dropdownToggles = document.querySelectorAll('.dropdown > a');
+  const logo = document.querySelector('.logo');
+  const nav = document.querySelector('.nav-blur');
 
-if (hamburger2 && navLinks2 && overlay2) {
-  hamburger2.addEventListener("click", () => {
-    const isOpen = navLinks2.classList.toggle("open");
-    overlay2.classList.toggle("show");
-    body2.classList.toggle("no-scroll");
-    hamburger2.innerHTML = isOpen
-      ? '<i class="fas fa-times"></i>'
-      : '<i class="fas fa-bars"></i>';
+  /* ----- Hamburger Toggle ----- */
+  hamburger?.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    overlay.classList.toggle('show', open);
+    document.body.classList.toggle('no-scroll', open);
+    hamburger.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', open);
   });
 
-  overlay2.addEventListener("click", () => {
-    navLinks2.classList.remove("open");
-    overlay2.classList.remove("show");
-    body2.classList.remove("no-scroll");
-    hamburger2.innerHTML = '<i class="fas fa-bars"></i>';
-  });
-}
-
-dropdownToggles2.forEach(toggle => {
-  toggle.addEventListener("click", (e) => {
-    e.preventDefault();
-    const parent = toggle.parentElement;
-    parent.classList.toggle("open");
-
-    const icon = toggle.querySelector(".dropdown-icon");
-    if (icon) icon.classList.toggle("rotate");
-  });
-});
-
-document.querySelectorAll('.dropdown-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks2.classList.remove('open');
-    overlay2.classList.remove('show');
-    body2.classList.remove('no-scroll');
-    hamburger2.innerHTML = '<i class="fas fa-bars"></i>';
-  });
-});
-
-document.querySelectorAll('.dropdown-sub-toggle').forEach(toggle => {
-  toggle.addEventListener('click', (e) => {
-    if (window.innerWidth <= 700) {
-      e.preventDefault();
-      const parent = toggle.parentElement;
-      parent.classList.toggle('open');
-    }
-  });
-});
-
-
-// Wait for DOM Hamburger Menu
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
-  const overlay = document.querySelector(".menu-overlay");
-  const dropdownToggles = document.querySelectorAll(".dropdown > a");
-  const subDropdownToggles = document.querySelectorAll(".dropdown-sub-toggle");
-
-  /* ------------------------------
-     Hamburger Menu Toggle
-  ------------------------------ */
-  hamburger.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
-    overlay.classList.toggle("show", isOpen);
-    document.body.classList.toggle("no-scroll", isOpen);
+  /* ----- Overlay Click (Close Menu) ----- */
+  overlay?.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    overlay.classList.remove('show');
+    document.body.classList.remove('no-scroll');
+    hamburger?.classList.remove('active');
+    hamburger?.setAttribute('aria-expanded', 'false');
   });
 
-  /* ------------------------------
-     Overlay Close on Click
-  ------------------------------ */
-  overlay.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    overlay.classList.remove("show");
-    document.body.classList.remove("no-scroll");
-  });
-
-  /* ------------------------------
-     Dropdown Toggle (Mobile Only)
-  ------------------------------ */
+  /* ----- Dropdown Toggle (Mobile) ----- */
   dropdownToggles.forEach(toggle => {
-    toggle.addEventListener("click", e => {
+    toggle.addEventListener('click', e => {
       const parent = toggle.parentElement;
-      const icon = toggle.querySelector(".dropdown-icon");
-
-      // Only run on mobile
-      if (window.innerWidth <= 700) {
-        e.preventDefault();
-
-        // Toggle the dropdown open/close
-        parent.classList.toggle("open");
-        if (icon) icon.classList.toggle("rotate");
-      }
+      const icon = toggle.querySelector('.dropdown-icon');
+      e.preventDefault();
+      const isOpen = parent.classList.toggle('open');
+      if (icon) icon.classList.toggle('rotate', isOpen);
+      e.stopPropagation();
     });
   });
 
-  /* ------------------------------
-     Sub-Dropdown (Mobile Only)
-  ------------------------------ */
-  subDropdownToggles.forEach(subToggle => {
-    subToggle.addEventListener("click", e => {
-      const parent = subToggle.parentElement;
-
-      if (window.innerWidth <= 700) {
-        e.preventDefault();
-        parent.classList.toggle("open");
-      }
-    });
+  /* ----- Close Dropdowns When Clicking Outside ----- */
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+      document.querySelectorAll('.dropdown-icon').forEach(i => i.classList.remove('rotate'));
+    }
   });
 
-  /* ------------------------------
-     Close mobile menu when resizing to desktop
-  ------------------------------ */
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 700) {
-      navLinks.classList.remove("open");
-      overlay.classList.remove("show");
-      document.body.classList.remove("no-scroll");
-      document
-        .querySelectorAll(".dropdown, .dropdown-sub")
-        .forEach(el => el.classList.remove("open"));
+  /* ----- Close Mobile Menu on Resize ----- */
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove('open');
+      overlay.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+      hamburger?.classList.remove('active');
+      hamburger?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  /* ----- Scroll Dark Navbar + Logo Switch ----- */
+  let isDark = false;
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 80;
+    if (scrolled && !isDark) {
+      nav.classList.add('nav-dark');
+      logo.src = 'images/logore.png'; // white logo when scrolled
+      // ✅ Do NOT change hamburger color on scroll
+      isDark = true;
+    } else if (!scrolled && isDark) {
+      nav.classList.remove('nav-dark');
+      logo.src = 'images/logo.png'; // normal logo at top
+      // ✅ Hamburger stays same maroon always
+      isDark = false;
     }
   });
 });
+
+console.log("✅ Navbar script is running!");
+// Add this at the very bottom:
+
 
 
 

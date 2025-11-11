@@ -19,61 +19,58 @@
 <body class="luxury-mode">
 
   <!-- NAVBAR -->
-  <header>
-    <div class="nav-blur">
-      <div class="container nav-flex">
-        <div class="brand">
-          <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
-          <span class="company-name">P.S.R.Computers</span>
-        </div>
-
-        <nav aria-label="Primary">
-          <ul class="nav-links" id="navbar-links">
-  <li><a href="index.html">Home</a></li>
-
-  <!-- ✅ Single List Product Dropdown -->
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-      Product <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
-    </a>
-    <ul class="dropdown-menu" aria-label="Product submenu">
-      <li><a href="paysoft.html">Payroll Management</a></li>
-      <li><a href="contax.html">TDS Management (26Q & 24Q)</a></li>
-      <li><a href="exam.html">Exam Management</a></li>
-      <li><a href="fee.html">Fee Management</a></li>
-      <li><a href="library.html">Library Management</a></li>
-      <li><a href="leavesoft.html">Leave Management</a></li>
-      <li><a href="stusoft.html">Student Management</a></li>
-      <li><a href="inventory.html">Inventory Management</a></li>
-    </ul>
-  </li>
-
-  <!-- ✅ About Dropdown (Restored) -->
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-      About <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
-    </a>
-    <ul class="dropdown-menu" aria-label="About submenu">
-      <li><a href="company.html">Company</a></li>
-      <li><a href="why-us.html">Why Us</a></li>
-    </ul>
-  </li>
-
-  <!-- Other standard links -->
-  <li><a href="pricing.html">Pricing</a></li>
-  <li><a href="contactus.html">ContactUs</a></li>
-  <li><a href="news.html">News</a></li>
-</ul>
-
-
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="navbar-links" aria-expanded="false">
-          &#9776;
-        </button>
+<header>
+  <div class="nav-blur">
+    <div class="container nav-flex">
+      <div class="brand">
+        <img src="images/logo.png" alt="PSRComputers Logo" class="logo" />
+        <span class="company-name">P.S.R.Computers</span>
       </div>
-    </div>
-  </header>
 
-  <div class="menu-overlay" id="menuOverlay" tabindex="-1" aria-hidden="true"></div>
+      <ul class="nav-links" id="navbar-links">
+        <li><a href="index.html">Home</a></li>
+
+        <!-- Product Dropdown -->
+        <li class="dropdown">
+          <a href="#">Product <i class="fas fa-caret-down dropdown-icon"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="paysoft.html">Payroll Management</a></li>
+            <li><a href="contax.html">TDS Management (26Q & 24Q)</a></li>
+            <li><a href="exam.html">Exam Management</a></li>
+            <li><a href="fee.html">Fee Management</a></li>
+            <li><a href="library.html">Library Management</a></li>
+            <li><a href="leavesoft.html">Leave Management</a></li>
+            <li><a href="stusoft.html">Student Management</a></li>
+            <li><a href="inventory.html">Inventory Management</a></li>
+          </ul>
+        </li>
+
+        <!-- About Dropdown -->
+        <li class="dropdown">
+          <a href="#">About <i class="fas fa-caret-down dropdown-icon"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="company.html">Company</a></li>
+            <li><a href="why-us.html">Why Us</a></li>
+          </ul>
+        </li>
+
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contactus.html">ContactUs</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+<button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="navbar-links" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+    </div>
+  </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay" tabindex="-1" aria-hidden="true"></div>
 
 
 <!-- content  -->

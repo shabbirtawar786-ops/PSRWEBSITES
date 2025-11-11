@@ -280,3 +280,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log("✅ Navbar script is running!");
+// Add this at the very bottom:
+
